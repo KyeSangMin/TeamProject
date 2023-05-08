@@ -369,7 +369,10 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Script/BackgroundScrolling.cs"
 "Assets/Script/InputSystem.cs"
+"Assets/Script/Mousecontrol.cs"
 "Assets/Script/PlayerMovement.cs"
+"Assets/Script/PlayerSpawner.cs"
+"Assets/Script/SceneManage.cs"
 "Assets/Script/UI_ButtonEvent.cs"
 -langversion:9.0
 
