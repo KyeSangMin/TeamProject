@@ -6,9 +6,12 @@ using UnityEngine;
 public class Mousecontrol : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    bool SetCamera;
     void Start()
     {
-        
+        GameObject.Find("Main Camera").GetComponent<CRTEffect>().enabled = false;
+        SetCamera = false;
     }
 
     // Update is called once per frame
@@ -40,8 +43,22 @@ public class Mousecontrol : MonoBehaviour
 
         }
 
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (SetCamera == false)
+            {
+                GameObject.Find("Main Camera").GetComponent<CRTEffect>().enabled = true;
+                SetCamera = true;
+            }
+            else
+            {
+                GameObject.Find("Main Camera").GetComponent<CRTEffect>().enabled = false;
+                SetCamera = false;
+            }
+        }
 
-    }
+
+        }
 
 
 

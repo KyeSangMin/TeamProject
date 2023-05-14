@@ -374,6 +374,10 @@
 "Assets/Script/PlayerSpawner.cs"
 "Assets/Script/SceneManage.cs"
 "Assets/Script/UI_ButtonEvent.cs"
+"Assets/UltimateCRT/Demo/Scripts/ImageSwitcher.cs"
+"Assets/UltimateCRT/Scripts/BaseCRTEffect.cs"
+"Assets/UltimateCRT/Scripts/CRTEffect.cs"
+"Assets/UltimateCRT/Scripts/StandaloneCRTEffect.cs"
 -langversion:9.0
 
 /deterministic

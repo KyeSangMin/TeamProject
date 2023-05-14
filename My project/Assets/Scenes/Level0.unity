@@ -179,7 +179,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 47276707}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: -0.03, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -221,6 +221,58 @@ Transform:
   m_Father: {fileID: 1047615397}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &153874689 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6055049890890106651, guid: 3dbc057b6a7aded43aea22e458bc3051, type: 3}
+  m_PrefabInstance: {fileID: 2054221722}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &153874691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153874689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12af3a8efeefc4e66b8c5d95597db110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  predefinedModel: 0
+  blurSize: 0.7
+  blurStrength: 0.6
+  bleedingSize: 0.75
+  bleedingStrength: 0.5
+  chromaticAberrationOffset: 1.25
+  RGBMaskIntensivity: 0.6
+  RGBMaskStrength: 0.6
+  RGBMaskBleeding: 0.1
+  colorNoiseMode: 0
+  colorNoiseStrength: 0.15
+  whiteNoiseMode: 4
+  whiteNoiseStrength: 0.25
+  darkestLevel: {r: 0, g: 0, b: 0, a: 1}
+  brightestLevel: {r: 0.92156863, g: 0.92156863, b: 0.92156863, a: 1}
+  darkestColor: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 1}
+  brightestColor: {r: 1, g: 1, b: 1, a: 1}
+  brightness: 0.2
+  contrast: 0.1
+  saturation: -0.05
+  interferenceWidth: 25
+  interferenceSpeed: 3
+  interferenceStrength: 0
+  interferenceSplit: 0.25
+  maskMode: 1
+  maskStrength: 0.35
+  curvatureX: 0.6
+  curvatureY: 0.6
+  overscan: 0
+  vignetteSize: 0.35
+  vignetteStrength: 0.1
+  textureScaling: 2
+  scalingPolicy: 2
+  textureSize: 768
+  otherCameras: []
 --- !u!1 &336413755
 GameObject:
   m_ObjectHideFlags: 0
