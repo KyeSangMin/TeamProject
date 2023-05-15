@@ -1224,7 +1224,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6055049890095796751, guid: 3dbc057b6a7aded43aea22e458bc3051, type: 3}
   m_PrefabInstance: {fileID: 1772582382}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2025659386}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9d133cbca7263f4a834eb7be34e74d2, type: 3}
@@ -2142,6 +2142,7 @@ GameObject:
   - component: {fileID: 844804355}
   - component: {fileID: 844804356}
   - component: {fileID: 844804357}
+  - component: {fileID: 844804358}
   m_Layer: 0
   m_Name: SceneManage
   m_TagString: Untagged
@@ -2191,6 +2192,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a677c6d494b7fe4aa980d61eba99289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &844804358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844804353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8be990bfcda4074b8f3cf872d70331f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  csvFile: {fileID: 4900000, guid: bc06dbc8c30db9740a0fce59bfbb684e, type: 3}
 --- !u!1 &888216516
 GameObject:
   m_ObjectHideFlags: 0
@@ -4389,6 +4403,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2001703140}
   m_CullTransparentMesh: 1
+--- !u!1 &2025659386 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6055049890095796737, guid: 3dbc057b6a7aded43aea22e458bc3051, type: 3}
+  m_PrefabInstance: {fileID: 1772582382}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2025659388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025659386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d078e3b24f414de46af14ad7fa6e94cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventName: "\uC678\uBD80\uC5D0\uC11C \uC811\uCD09"
+  talkDatas: []
 --- !u!1 &2043101717
 GameObject:
   m_ObjectHideFlags: 0
