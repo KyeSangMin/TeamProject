@@ -2,17 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class DebugTalkData
+{
+    public string eventName;
+    public TalkData[] talkDatas;
+
+    public DebugTalkData(string name, TalkData[] td)
+    {
+        eventName = name;
+        talkDatas = td;
+    }
+}
+
 public class DialogueParse : MonoBehaviour
 {
     private void Awake()
     {
         SetTalkDictionary();
+        SetDebugTalkData();
     }
 
     private static Dictionary<string, TalkData[]> TalkDictionary =
         new Dictionary<string, TalkData[]>();
-
     [SerializeField] private TextAsset csvFile = null;
+
+    [SerializeField] List<DebugTalkData> DebugTalkDataList =
+        new List<DebugTalkData>();
+
 
     public void SetTalkDictionary()
     {
@@ -60,9 +77,30 @@ public class DialogueParse : MonoBehaviour
         return talkDataList.ToArray();
     }
 
+    void SetDebugTalkData()
+    {
+        List<string> eventNames =
+            new List<string>(TalkDictionary.Keys);
+        List<TalkData[]> talkDataList =
+            new List<TalkData[]>(TalkDictionary.Values);
+
+        for(int i = 0; i < eventNames.Count; i++)
+        {
+            DebugTalkData debugTalk =
+                new DebugTalkData(eventNames[i], talkDataList[i]);
+
+            DebugTalkDataList.Add(debugTalk);
+        }
+    }
 
     public static TalkData[] GetDialogue(string eventName)
     {
-        return TalkDictionary[eventName];
+        if(TalkDictionary.ContainsKey(eventName))
+            return TalkDictionary[eventName];
+        else
+        {
+            Debug.LogWarning("찾을 수 없는 이벤트 이름: " + eventName);
+            return null;
+        }
     }
 }

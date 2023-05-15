@@ -2205,6 +2205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   csvFile: {fileID: 4900000, guid: bc06dbc8c30db9740a0fce59bfbb684e, type: 3}
+  DebugTalkDataList: []
 --- !u!1 &888216516
 GameObject:
   m_ObjectHideFlags: 0
