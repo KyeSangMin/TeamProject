@@ -6,6 +6,7 @@ TagManager:
   tags:
   - RightPoint
   - LeftPoint
+  - Item
   layers:
   - Default
   - TransparentFX

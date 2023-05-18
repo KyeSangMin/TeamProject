@@ -133,7 +133,10 @@ public class UI_ButtonEvent : MonoBehaviour
         CharInfo.SetActive(false);
     }
 
+    public void AddItem()
+    {
 
+    }
 
 
     /*

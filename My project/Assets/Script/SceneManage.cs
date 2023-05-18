@@ -36,7 +36,7 @@ public class SceneManage : MonoBehaviour
     public void StartGame()
     {
         StartCoroutine(Fade(0.0f));
-
+        
         startbutton.SetActive(false);
         //GameObject.Find("Main Camera").SetActive(false);
         scenesToLoad.Add(SceneManager.LoadSceneAsync("LoadScene", LoadSceneMode.Additive));
@@ -59,11 +59,12 @@ public class SceneManage : MonoBehaviour
     {
         int DNum = i+1;
         StartCoroutine(Fade(0.0f));
+        CheckPlayerPos();
         scenesToLoad.Add(SceneManager.LoadSceneAsync("Level" + DNum, LoadSceneMode.Additive));
         scenesToLoad.Remove(SceneManager.UnloadSceneAsync("Level" + i));
         SceneNum++;
-
-
+        HideMoveButton();
+       
 
     }
 
@@ -73,9 +74,12 @@ public class SceneManage : MonoBehaviour
         int DNum = i - 1;
         int SNum = i;
         StartCoroutine(Fade(0.0f));
+        CheckPlayerPos();
         scenesToLoad.Add(SceneManager.LoadSceneAsync("Level" + DNum, LoadSceneMode.Additive));
         scenesToLoad.Remove(SceneManager.UnloadSceneAsync("Level" + SNum));
         SceneNum--;
+        HideMoveButton();
+       
     }
 
     public void TeleportFirst()
@@ -85,9 +89,11 @@ public class SceneManage : MonoBehaviour
         if(SceneNum != 0)
         {
             StartCoroutine(Fade(0.0f));
+            CheckPlayerPos();
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Level0", LoadSceneMode.Additive));
             scenesToLoad.Remove(SceneManager.UnloadSceneAsync("Level" + SceneNum));
             SceneNum = 0;
+            HideMoveButton();
         }
         
     }
@@ -99,11 +105,57 @@ public class SceneManage : MonoBehaviour
         if (SceneNum != 1)
         {
             StartCoroutine(Fade(0.0f));
+            CheckPlayerPos();
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Level1", LoadSceneMode.Additive));
             scenesToLoad.Remove(SceneManager.UnloadSceneAsync("Level" + SceneNum));
             SceneNum = 1;
+            HideMoveButton();
         }
     }
+
+
+    public void HideMoveButton()
+    {
+
+        if (SceneNum == 0)
+        {
+            //GameObject.Find("LeftButton").SetActive(false);
+            //GameObject.Find("RightButton").SetActive(false);
+            MainUI.transform.Find("LeftButton").gameObject.SetActive(false);
+            MainUI.transform.Find("RightButton").gameObject.SetActive(false);
+        }
+
+        else
+        {
+           // GameObject.Find("LeftButton").SetActive(true);
+            //GameObject.Find("RightButton").SetActive(true);
+            MainUI.transform.Find("LeftButton").gameObject.SetActive(true);
+            MainUI.transform.Find("RightButton").gameObject.SetActive(true);
+        }
+    
+    }
+
+    public void CheckPlayerPos()
+    {
+        // 0 left 1 right
+       // new Vector3 pos;
+        if(GameObject.Find("Player").GetComponent<PlayerMovement>().State == 0)
+        {
+            GameObject.Find("Player").transform.position = GameObject.Find("RightCameraPoint").transform.position;
+            GameObject.Find("Player").GetComponent<PlayerMovement>().State = 1;
+        }
+        else
+        {
+            GameObject.Find("Player").transform.position = GameObject.Find("LeftCameraPoint").transform.position;
+            GameObject.Find("Player").GetComponent<PlayerMovement>().State = 0;
+        }
+
+
+
+
+
+    }
+
 
 
     IEnumerator LoadingScreen()
@@ -145,6 +197,7 @@ public class SceneManage : MonoBehaviour
         MainUI.SetActive(true);
         scenesToLoad.Add(SceneManager.LoadSceneAsync("Level0", LoadSceneMode.Additive));
         scenesToLoad.Remove(SceneManager.UnloadSceneAsync("LoadScene"));
+        HideMoveButton();
 
 
     }
