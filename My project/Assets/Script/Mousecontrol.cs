@@ -8,12 +8,12 @@ public class Mousecontrol : MonoBehaviour
     // Start is called before the first frame update
 
     bool SetCamera;
-    bool ScanActive;
+    //bool ScanActive;
     void Start()
     {
         GameObject.Find("Main Camera").GetComponent<CRTEffect>().enabled = false;
         SetCamera = false;
-        ScanActive = false;
+        //ScanActive = false;
     }
 
     // Update is called once per frame
