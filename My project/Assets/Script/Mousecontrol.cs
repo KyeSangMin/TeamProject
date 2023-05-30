@@ -7,6 +7,9 @@ public class Mousecontrol : MonoBehaviour
 {
     // Start is called before the first frame update
 
+
+    
+
     bool SetCamera;
     //bool ScanActive;
     void Start()
@@ -50,7 +53,12 @@ public class Mousecontrol : MonoBehaviour
                     if (hit.collider.CompareTag("LeftPoint"))
                     {
                         GameObject.Find("SceneManage").GetComponent<SceneManage>().BeforeSceneLoad(SceneManage.SceneNum);
+                    } 
+                    if(hit.collider.CompareTag("Item"))
+                    {
+                        hit.collider.gameObject.SetActive(false); 
                     }
+
                 }
                 
             }
