@@ -196,7 +196,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: fd07c1d4153032447b78287dada7ad4f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfdc0b6d6024d104898fdd7b7afbc4a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1062,7 +1062,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 3bad629dcce3d724395d32e77afc0258, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c0a3650dcfea7f240a1558b3a8436b4b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1152,7 +1152,7 @@ GameObject:
   - component: {fileID: 1668851852}
   m_Layer: 0
   m_Name: RightLoadPoint
-  m_TagString: Untagged
+  m_TagString: RightPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

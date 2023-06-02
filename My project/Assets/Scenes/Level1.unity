@@ -514,7 +514,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: f2c505581fcdfe349bf0c29ff75457a9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 23aafaead7f6e9643b1eaeea54f78eef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -747,7 +747,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: fd3aea54ce9d3e24cb4bd8073f03499b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f629a431e8b12124880abff354c043cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1354,7 +1354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6055049890095796737, guid: 3dbc057b6a7aded43aea22e458bc3051, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6055049890095796751, guid: 3dbc057b6a7aded43aea22e458bc3051, type: 3}
       propertyPath: Pos_Left

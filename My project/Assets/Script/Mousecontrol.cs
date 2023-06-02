@@ -38,9 +38,9 @@ public class Mousecontrol : MonoBehaviour
                 if(SetCamera == true)
                 {
                   
-                    if(hit.collider.CompareTag("Item"))
+                    if(hit.collider.CompareTag("ScanItem"))
                     {
-                        //GameObject.Find("MainUI").GetComponent<UI_ButtonEvent>;
+                        hit.collider.gameObject.SetActive(false);
                     }
 
                 }
@@ -57,6 +57,11 @@ public class Mousecontrol : MonoBehaviour
                     if(hit.collider.CompareTag("Item"))
                     {
                         hit.collider.gameObject.SetActive(false); 
+                    }
+                    if(hit.collider.CompareTag("NPC"))
+                    {
+                        
+                        Debug.Log("NPC");
                     }
 
                 }

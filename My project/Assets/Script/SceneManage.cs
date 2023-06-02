@@ -89,7 +89,8 @@ public class SceneManage : MonoBehaviour
         if(SceneNum != 0)
         {
             StartCoroutine(Fade(0.0f));
-            CheckPlayerPos();
+            GameObject.Find("Player").transform.position = GameObject.Find("RightCameraPoint").transform.position;
+            GameObject.Find("Player").GetComponent<PlayerMovement>().State = 1;
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Level0", LoadSceneMode.Additive));
             scenesToLoad.Remove(SceneManager.UnloadSceneAsync("Level" + SceneNum));
             SceneNum = 0;
@@ -109,6 +110,74 @@ public class SceneManage : MonoBehaviour
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Level1", LoadSceneMode.Additive));
             scenesToLoad.Remove(SceneManager.UnloadSceneAsync("Level" + SceneNum));
             SceneNum = 1;
+            HideMoveButton();
+        }
+    }
+
+
+    public void Teleport3()
+    {
+        if (SceneNum != 2)
+        {
+            StartCoroutine(Fade(0.0f));
+            CheckPlayerPos();
+            scenesToLoad.Add(SceneManager.LoadSceneAsync("Level2", LoadSceneMode.Additive));
+            scenesToLoad.Remove(SceneManager.UnloadSceneAsync("Level" + SceneNum));
+            SceneNum = 2;
+            HideMoveButton();
+        }
+    }
+
+    public void Teleport4()
+    {
+        if (SceneNum != 3)
+        {
+            StartCoroutine(Fade(0.0f));
+            CheckPlayerPos();
+            scenesToLoad.Add(SceneManager.LoadSceneAsync("Level3", LoadSceneMode.Additive));
+            scenesToLoad.Remove(SceneManager.UnloadSceneAsync("Level" + SceneNum));
+            SceneNum = 3;
+            HideMoveButton();
+        }
+    }
+
+    public void Teleport5()
+    {
+        if (SceneNum != 4)
+        {
+            StartCoroutine(Fade(0.0f));
+            CheckPlayerPos();
+            scenesToLoad.Add(SceneManager.LoadSceneAsync("Level4", LoadSceneMode.Additive));
+            scenesToLoad.Remove(SceneManager.UnloadSceneAsync("Level" + SceneNum));
+            SceneNum = 4;
+            HideMoveButton();
+        }
+    }
+
+    public void Teleport6()
+    {
+        if (SceneNum != 5)
+        {
+            StartCoroutine(Fade(0.0f));
+            CheckPlayerPos();
+            scenesToLoad.Add(SceneManager.LoadSceneAsync("Level5", LoadSceneMode.Additive));
+            scenesToLoad.Remove(SceneManager.UnloadSceneAsync("Level" + SceneNum));
+            SceneNum = 5;
+            HideMoveButton();
+        }
+    }
+
+
+    public void Teleport7()
+    {
+        if (SceneNum != 6)
+        {
+            StartCoroutine(Fade(0.0f));
+            GameObject.Find("Player").transform.position = GameObject.Find("LeftCameraPoint").transform.position;
+            GameObject.Find("Player").GetComponent<PlayerMovement>().State = 0;
+            scenesToLoad.Add(SceneManager.LoadSceneAsync("Level6", LoadSceneMode.Additive));
+            scenesToLoad.Remove(SceneManager.UnloadSceneAsync("Level" + SceneNum));
+            SceneNum = 6;
             HideMoveButton();
         }
     }

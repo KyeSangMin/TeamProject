@@ -16,10 +16,10 @@ public class UI_ButtonEvent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Puzzle_UI = GameObject.Find("UI_Puzzle");
+        //Puzzle_UI = GameObject.Find("UI_Puzzle");
         PAD_UI = GameObject.Find("UI_SlidePad");
        // Dialogue_UI = GameObject.Find("UI_Dialogue");
-        Puzzle_UI.SetActive(false);
+       // Puzzle_UI.SetActive(false);
         PAD_UI.SetActive(false);
         //Dialogue_UI.SetActive(false);
 
@@ -81,10 +81,12 @@ public class UI_ButtonEvent : MonoBehaviour
         if(CharInfo.activeSelf == true)
         {
             CharInfo.SetActive(false);
+            PAD_UI.SetActive(true);
         }
         else
         {
             CharInfo.SetActive(true);
+            PAD_UI.SetActive(false);
         }
 
     }
@@ -94,10 +96,12 @@ public class UI_ButtonEvent : MonoBehaviour
         if (ItemInfo.activeSelf == true)
         {
             ItemInfo.SetActive(false);
+            PAD_UI.SetActive(true);
         }
         else
         {
             ItemInfo.SetActive(true);
+            PAD_UI.SetActive(false);
         }
     }
 
@@ -106,10 +110,12 @@ public class UI_ButtonEvent : MonoBehaviour
         if (MapInfo.activeSelf == false)
         {
             MapInfo.SetActive(true);
+            PAD_UI.SetActive(false);
         }
         else
         {
             MapInfo.SetActive(false);
+            PAD_UI.SetActive(true);
         }
     }
     
