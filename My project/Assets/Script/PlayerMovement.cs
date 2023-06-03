@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public int State;  // 0 left 1 right
     public Vector3 TargetPos;
 
+    public Animator animator;
+
     public float smoothTime;
 
     public bool ButtonState;
@@ -19,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     {
         State = 1;
         ButtonState = false;
-
+        animator = gameObject.GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -28,20 +30,20 @@ public class PlayerMovement : MonoBehaviour
 
         CheckCamPos();
 
-       
-
         if(ButtonState)
         {
             smoothTime = 1.5f;
 
 
-            Cam.transform.position = Vector3.Lerp(transform.position, TargetPos, Time.deltaTime);
-
-            if(Vector3.Distance(TargetPos, Cam.transform.position) < 0.1f)
+           // Cam.transform.position = Vector3.Lerp(transform.position, TargetPos, Time.deltaTime);
+            Cam.transform.position = Vector3.MoveTowards(transform.position, TargetPos,0.01f);
+            if (Vector3.Distance(TargetPos, Cam.transform.position) < 0.1f)
             {
                 ButtonState = false;
-                
-                if(this.State == 1)
+                animator.SetBool("WalkFront", false);
+                animator.SetBool("WalkBack", false);
+
+                if (this.State == 1)
                 {
                     State = 0;
                 }
@@ -78,6 +80,7 @@ public class PlayerMovement : MonoBehaviour
         if(State == 0)
         {
             ButtonState = true;
+            animator.SetBool("WalkFront", true);
         }
 
         
@@ -88,6 +91,7 @@ public class PlayerMovement : MonoBehaviour
         if(State == 1)
         {
             ButtonState = true;
+            animator.SetBool("WalkBack", true);
         }
         
     }

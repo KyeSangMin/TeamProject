@@ -82,11 +82,13 @@ public class UI_ButtonEvent : MonoBehaviour
         {
             CharInfo.SetActive(false);
             PAD_UI.SetActive(true);
+            
         }
         else
         {
             CharInfo.SetActive(true);
             PAD_UI.SetActive(false);
+            GameObject.Find("SceneManage").GetComponent<DataManager>().CheckCharInfo();
         }
 
     }

@@ -61,7 +61,8 @@ public class Mousecontrol : MonoBehaviour
                     if(hit.collider.CompareTag("NPC"))
                     {
                         
-                        Debug.Log("NPC");
+                            GameObject.Find("SceneManage").GetComponent<DataManager>().AddCharInfo(hit.collider.GetComponent<CharData>().getNumber());
+                        
                     }
 
                 }
