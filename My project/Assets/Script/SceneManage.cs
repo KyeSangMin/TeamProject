@@ -57,6 +57,7 @@ public class SceneManage : MonoBehaviour
 
     public void NextSceneLoad(int i)
     {
+     
         int DNum = i+1;
         StartCoroutine(Fade(0.0f));
         CheckPlayerPos();
@@ -64,13 +65,14 @@ public class SceneManage : MonoBehaviour
         scenesToLoad.Remove(SceneManager.UnloadSceneAsync("Level" + i));
         SceneNum++;
         HideMoveButton();
-       
+
 
     }
 
 
     public void BeforeSceneLoad(int i)
     {
+      
         int DNum = i - 1;
         int SNum = i;
         StartCoroutine(Fade(0.0f));
@@ -79,15 +81,16 @@ public class SceneManage : MonoBehaviour
         scenesToLoad.Remove(SceneManager.UnloadSceneAsync("Level" + SNum));
         SceneNum--;
         HideMoveButton();
-       
+
     }
 
     public void TeleportFirst()
     {
+        
 
-       
-        if(SceneNum != 0)
+        if (SceneNum != 0)
         {
+
             StartCoroutine(Fade(0.0f));
             GameObject.Find("Player").transform.position = GameObject.Find("RightCameraPoint").transform.position;
             GameObject.Find("Player").GetComponent<PlayerMovement>().State = 1;
@@ -96,15 +99,16 @@ public class SceneManage : MonoBehaviour
             SceneNum = 0;
             HideMoveButton();
         }
-        
+
     }
 
 
     public void TelportSecond()
     {
-       
+        
         if (SceneNum != 1)
         {
+          
             StartCoroutine(Fade(0.0f));
             CheckPlayerPos();
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Level1", LoadSceneMode.Additive));
@@ -112,6 +116,7 @@ public class SceneManage : MonoBehaviour
             SceneNum = 1;
             HideMoveButton();
         }
+       
     }
 
 
@@ -119,6 +124,7 @@ public class SceneManage : MonoBehaviour
     {
         if (SceneNum != 2)
         {
+            
             StartCoroutine(Fade(0.0f));
             CheckPlayerPos();
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Level2", LoadSceneMode.Additive));
@@ -126,12 +132,14 @@ public class SceneManage : MonoBehaviour
             SceneNum = 2;
             HideMoveButton();
         }
+        
     }
 
     public void Teleport4()
     {
         if (SceneNum != 3)
         {
+           
             StartCoroutine(Fade(0.0f));
             CheckPlayerPos();
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Level3", LoadSceneMode.Additive));
@@ -139,12 +147,14 @@ public class SceneManage : MonoBehaviour
             SceneNum = 3;
             HideMoveButton();
         }
+        
     }
 
     public void Teleport5()
     {
         if (SceneNum != 4)
         {
+            
             StartCoroutine(Fade(0.0f));
             CheckPlayerPos();
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Level4", LoadSceneMode.Additive));
@@ -152,12 +162,14 @@ public class SceneManage : MonoBehaviour
             SceneNum = 4;
             HideMoveButton();
         }
+       
     }
 
     public void Teleport6()
     {
         if (SceneNum != 5)
         {
+            
             StartCoroutine(Fade(0.0f));
             CheckPlayerPos();
             scenesToLoad.Add(SceneManager.LoadSceneAsync("Level5", LoadSceneMode.Additive));
@@ -165,6 +177,7 @@ public class SceneManage : MonoBehaviour
             SceneNum = 5;
             HideMoveButton();
         }
+        
     }
 
 
@@ -172,6 +185,7 @@ public class SceneManage : MonoBehaviour
     {
         if (SceneNum != 6)
         {
+          
             StartCoroutine(Fade(0.0f));
             GameObject.Find("Player").transform.position = GameObject.Find("LeftCameraPoint").transform.position;
             GameObject.Find("Player").GetComponent<PlayerMovement>().State = 0;
@@ -180,13 +194,14 @@ public class SceneManage : MonoBehaviour
             SceneNum = 6;
             HideMoveButton();
         }
+       
     }
 
 
     public void HideMoveButton()
     {
 
-        if (SceneNum == 0)
+        if (SceneNum == 0 || SceneNum ==6)
         {
             //GameObject.Find("LeftButton").SetActive(false);
             //GameObject.Find("RightButton").SetActive(false);
@@ -225,7 +240,10 @@ public class SceneManage : MonoBehaviour
 
     }
 
-
+    public int getSceneNum()
+    {
+        return SceneNum;
+    }
 
     IEnumerator LoadingScreen()
     {
@@ -254,7 +272,7 @@ public class SceneManage : MonoBehaviour
 
         yield return null;
         }
-        FadeCg.blocksRaycasts = false;
+        FadeCg.blocksRaycasts = false; 
     }
 
     IEnumerator CutScene()

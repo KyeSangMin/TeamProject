@@ -2149,14 +2149,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8051499498572375808}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0, z: 0.8660254, w: -0.5}
   m_LocalPosition: {x: 2.049, y: 0.212, z: 9.917772}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8051499498800789306}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 240}
 --- !u!114 &8051499498572375810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2172,6 +2172,9 @@ MonoBehaviour:
   CorrectRotation:
   - 240
   isPlaced: 0
+  isrotateIndex: 0
+  CorrectIndex: 0
+  CorrectRotate: 04000000
 --- !u!212 &8051499498572375811
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2607,14 +2610,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8051499499685896451}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.62, y: 0.23, z: 9.917772}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 4.383, y: -1.122, z: 9.917772}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8051499498800789306}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &8051499499685896454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2630,6 +2633,9 @@ MonoBehaviour:
   CorrectRotation:
   - 180
   isPlaced: 0
+  isrotateIndex: 0
+  CorrectIndex: 0
+  CorrectRotate: 03000000
 --- !u!60 &8051499499685896455
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2737,14 +2743,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8051499499740720043}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.5, w: 0.8660254}
   m_LocalPosition: {x: 2.034, y: -2.476, z: 9.917772}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8051499498800789306}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 60}
 --- !u!212 &8051499499740720045
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2812,6 +2818,9 @@ MonoBehaviour:
   CorrectRotation:
   - 60
   isPlaced: 0
+  isrotateIndex: 0
+  CorrectIndex: 0
+  CorrectRotate: 01000000
 --- !u!60 &8051499499740720047
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2977,8 +2986,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CorrectRotation:
-  - 0
+  - 240
   isPlaced: 0
+  isrotateIndex: 0
+  CorrectIndex: 0
+  CorrectRotate: 04000000
 --- !u!1 &8051499499780907894
 GameObject:
   m_ObjectHideFlags: 0
@@ -3005,14 +3017,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8051499499780907894}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0, z: 0.8660254, w: -0.5}
   m_LocalPosition: {x: 1.282, y: -1.136, z: 9.917772}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8051499498800789306}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 240}
 --- !u!60 &8051499499780907896
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3194,8 +3206,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CorrectRotation:
-  - 180
+  - 120
   isPlaced: 0
+  isrotateIndex: 0
+  CorrectIndex: 0
+  CorrectRotate: 02000000
 --- !u!1 &8051499499783287246
 GameObject:
   m_ObjectHideFlags: 0
@@ -3222,14 +3237,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8051499499783287246}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.86602545, w: 0.49999994}
   m_LocalPosition: {x: 2.82, y: -1.13, z: 9.917772}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8051499498800789306}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 120}
 --- !u!60 &8051499499783287248
 PolygonCollider2D:
   m_ObjectHideFlags: 0

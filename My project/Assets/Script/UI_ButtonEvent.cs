@@ -71,7 +71,11 @@ public class UI_ButtonEvent : MonoBehaviour
         else
         {
             PAD_UI.SetActive(true);
-           
+            CharInfo.SetActive(false);
+            ItemInfo.SetActive(false);
+            MapInfo.SetActive(false);
+            CharInfo_Inside.SetActive(false);
+
         }
     }
 

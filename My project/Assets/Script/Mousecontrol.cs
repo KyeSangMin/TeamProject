@@ -40,6 +40,10 @@ public class Mousecontrol : MonoBehaviour
                   
                     if(hit.collider.CompareTag("ScanItem"))
                     {
+                       
+                        GameObject.Find("Main Camera").GetComponent<FollowCam>().ShakeTime = 0.5f;
+                 
+                        GameObject.Find("MainUI").GetComponent<NoiseEffect>().StartNose(0.1f);
                         hit.collider.gameObject.SetActive(false);
                     }
 
@@ -48,6 +52,7 @@ public class Mousecontrol : MonoBehaviour
                 {
                     if (hit.collider.CompareTag("RightPoint"))
                     {
+                       
                         GameObject.Find("SceneManage").GetComponent<SceneManage>().NextSceneLoad(SceneManage.SceneNum);
                     }
                     if (hit.collider.CompareTag("LeftPoint"))
@@ -74,6 +79,13 @@ public class Mousecontrol : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
+
+           
+            GameObject.Find("Main Camera").GetComponent<FollowCam>().ShakeTime = 0.5f;
+            GameObject.Find("MainUI").GetComponent<NoiseEffect>().StartNose(0.1f);
+           
+
+
             if (SetCamera == false)
             {
                 GameObject.Find("Main Camera").GetComponent<CRTEffect>().enabled = true;
