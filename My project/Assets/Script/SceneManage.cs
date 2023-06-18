@@ -16,17 +16,21 @@ public class SceneManage : MonoBehaviour
     public float fadeDuration = 1.0f;
     GameObject MainUI;
     public static int SceneNum;
+    GameObject sound;
 
     // Start is called before the first frame update
     void Start()
     {
+
         //Scene Openscene;
-        SceneManager.LoadSceneAsync("OpenScene", LoadSceneMode.Additive);
+        sound = GameObject.Find("AudioManager");
         startbutton = GameObject.Find("StartButton");
         FadeCg.alpha = 0.0f;
         MainUI = GameObject.Find("MainUI");
         MainUI.SetActive(false);
         SceneNum = 0;
+        StartCoroutine(Black());
+
 
     }
 
@@ -36,7 +40,8 @@ public class SceneManage : MonoBehaviour
     public void StartGame()
     {
         StartCoroutine(Fade(0.0f));
-        
+        sound.GetComponent<SoundManager>().PlayBgm(1);
+
         startbutton.SetActive(false);
         //GameObject.Find("Main Camera").SetActive(false);
         scenesToLoad.Add(SceneManager.LoadSceneAsync("LoadScene", LoadSceneMode.Additive));
@@ -289,5 +294,13 @@ public class SceneManage : MonoBehaviour
 
     }
 
-    
+    IEnumerator Black()
+    {
+        
+        yield return new WaitForSeconds(0.75f);
+        GameObject.Find("BlackImage").SetActive(false);
+        SceneManager.LoadSceneAsync("OpenScene", LoadSceneMode.Additive);
+        sound.GetComponent<SoundManager>().PlayBgm(0);
+    }
+
 }

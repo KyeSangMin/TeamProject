@@ -11,8 +11,9 @@ public class ImageSwitch : MonoBehaviour
 
   
     public Sprite sprite;
-
-
+    public Sprite silhouette;
+    public string TitleText;
+    public string MainText;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,15 @@ public class ImageSwitch : MonoBehaviour
         gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(18.32664f,120);
     }
 
+    public void SwitchItemImage()
+    {
+        gameObject.GetComponent<Image>().sprite = sprite;
+    }
+
+    public void SilhouetteImage()
+    {
+        gameObject.GetComponent<Image>().sprite = silhouette;
+    }
 
 
 
