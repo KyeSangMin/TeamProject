@@ -150,13 +150,137 @@ public class UI_ButtonEvent : MonoBehaviour
         CharInfo_Inside.SetActive(false);
         CharInfo.SetActive(true);
      }
-    
+
+    /*
     public void CharInfoData()
     {
         sound.GetComponent<SoundManager>().PlayEffect(1);
+        
         CharInfo_Inside.SetActive(true);
+        GameObject.Find("SceneManage").GetComponent<DataManager>().LoadCharInfo(1);
         CharInfo.SetActive(false);
+
     }
+    */
+    public void CharInfoButton1()
+    {
+        sound.GetComponent<SoundManager>().PlayEffect(1);
+        CharInfo_Inside.SetActive(true);
+        GameObject.Find("SceneManage").GetComponent<DataManager>().LoadCharInfo(0);
+        CharInfo.SetActive(false);
+
+    }
+
+    public void CharInfoButton2()
+    {
+        sound.GetComponent<SoundManager>().PlayEffect(1);
+        CharInfo_Inside.SetActive(true);
+        GameObject.Find("SceneManage").GetComponent<DataManager>().LoadCharInfo(1);
+        CharInfo.SetActive(false);
+
+    }
+
+    public void CharInfoButton3()
+    {
+        sound.GetComponent<SoundManager>().PlayEffect(1);
+        CharInfo_Inside.SetActive(true);
+        GameObject.Find("SceneManage").GetComponent<DataManager>().LoadCharInfo(2);
+        CharInfo.SetActive(false);
+
+    }
+
+    public void CharInfoButton4()
+    {
+        sound.GetComponent<SoundManager>().PlayEffect(1);
+        CharInfo_Inside.SetActive(true);
+        GameObject.Find("SceneManage").GetComponent<DataManager>().LoadCharInfo(3);
+        CharInfo.SetActive(false);
+
+    }
+
+    public void CharInfoButton5()
+    {
+        sound.GetComponent<SoundManager>().PlayEffect(1);
+        CharInfo_Inside.SetActive(true);
+        GameObject.Find("SceneManage").GetComponent<DataManager>().LoadCharInfo(4);
+        CharInfo.SetActive(false);
+
+    }
+
+    public void CharInfoButton6()
+    {
+        sound.GetComponent<SoundManager>().PlayEffect(1);
+        CharInfo_Inside.SetActive(true);
+        GameObject.Find("SceneManage").GetComponent<DataManager>().LoadCharInfo(5);
+        CharInfo.SetActive(false);
+
+    }
+
+    public void CharInfoButton7()
+    {
+        sound.GetComponent<SoundManager>().PlayEffect(1);
+        CharInfo_Inside.SetActive(true);
+        GameObject.Find("SceneManage").GetComponent<DataManager>().LoadCharInfo(6);
+        CharInfo.SetActive(false);
+
+    }
+
+    public void CharInfoButton8()
+    {
+        sound.GetComponent<SoundManager>().PlayEffect(1);
+        CharInfo_Inside.SetActive(true);
+        GameObject.Find("SceneManage").GetComponent<DataManager>().LoadCharInfo(7);
+        CharInfo.SetActive(false);
+
+    }
+
+    public void CharInfoButton9()
+    {
+        sound.GetComponent<SoundManager>().PlayEffect(1);
+        CharInfo_Inside.SetActive(true);
+        GameObject.Find("SceneManage").GetComponent<DataManager>().LoadCharInfo(8);
+        CharInfo.SetActive(false);
+
+    }
+
+    public void CharInfoButton10()
+    {
+        sound.GetComponent<SoundManager>().PlayEffect(1);
+        CharInfo_Inside.SetActive(true);
+        GameObject.Find("SceneManage").GetComponent<DataManager>().LoadCharInfo(9);
+        CharInfo.SetActive(false);
+
+    }
+
+    public void CharInfoButton11()
+    {
+        sound.GetComponent<SoundManager>().PlayEffect(1);
+        CharInfo_Inside.SetActive(true);
+        GameObject.Find("SceneManage").GetComponent<DataManager>().LoadCharInfo(10);
+        CharInfo.SetActive(false);
+
+    }
+
+    public void CharInfoButton12()
+    {
+        sound.GetComponent<SoundManager>().PlayEffect(1);
+        CharInfo_Inside.SetActive(true);
+        GameObject.Find("SceneManage").GetComponent<DataManager>().LoadCharInfo(11);
+        CharInfo.SetActive(false);
+
+    }
+
+    public void CharInfoButton13()
+    {
+        sound.GetComponent<SoundManager>().PlayEffect(1);
+        CharInfo_Inside.SetActive(true);
+        GameObject.Find("SceneManage").GetComponent<DataManager>().LoadCharInfo(12);
+        CharInfo.SetActive(false);
+
+    }
+
+
+
 
     public void ItemButton1()
     {

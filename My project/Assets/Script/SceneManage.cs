@@ -17,6 +17,7 @@ public class SceneManage : MonoBehaviour
     GameObject MainUI;
     public static int SceneNum;
     GameObject sound;
+    GameObject RetrunButton;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public class SceneManage : MonoBehaviour
         MainUI.SetActive(false);
         SceneNum = 0;
         StartCoroutine(Black());
+        RetrunButton = GameObject.Find("RetrunButton");
 
 
     }
@@ -43,6 +45,7 @@ public class SceneManage : MonoBehaviour
         sound.GetComponent<SoundManager>().PlayBgm(1);
 
         startbutton.SetActive(false);
+        GameObject.Find("config").SetActive(false);
         //GameObject.Find("Main Camera").SetActive(false);
         scenesToLoad.Add(SceneManager.LoadSceneAsync("LoadScene", LoadSceneMode.Additive));
         //scenesToLoad.Add(SceneManager.LoadSceneAsync("Level0", LoadSceneMode.Additive));
@@ -202,6 +205,36 @@ public class SceneManage : MonoBehaviour
        
     }
 
+    public void LoadConfig()
+    {
+        StartCoroutine(Fade(0.0f));
+        sound.GetComponent<SoundManager>().PlayBgm(1);
+        scenesToLoad.Add(SceneManager.LoadSceneAsync("Config", LoadSceneMode.Additive));
+        scenesToLoad.Remove(SceneManager.UnloadSceneAsync("OpenScene"));
+        GameObject.Find("MainCanvas").SetActive(false) ;
+        RetrunButton.SetActive(true);
+
+        //SceneManager.LoadScene("Config");
+
+
+    }
+
+    public void ReturnMain()
+    {
+        GameObject.Find("MainCanvas").SetActive(true);
+        StartCoroutine(Fade(0.0f));
+        sound.GetComponent<SoundManager>().PlayBgm(1);
+        scenesToLoad.Add(SceneManager.LoadSceneAsync("OpenScene", LoadSceneMode.Additive));
+        scenesToLoad.Remove(SceneManager.UnloadSceneAsync("Config"));
+        GameObject.Find("MainCanvas").SetActive(true);
+        RetrunButton.SetActive(false);
+
+
+    }
+
+
+
+
 
     public void HideMoveButton()
     {
@@ -299,6 +332,7 @@ public class SceneManage : MonoBehaviour
         
         yield return new WaitForSeconds(0.75f);
         GameObject.Find("BlackImage").SetActive(false);
+        RetrunButton.SetActive(false);
         SceneManager.LoadSceneAsync("OpenScene", LoadSceneMode.Additive);
         sound.GetComponent<SoundManager>().PlayBgm(0);
     }

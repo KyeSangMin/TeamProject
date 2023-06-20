@@ -6,6 +6,7 @@ public class DataManager : MonoBehaviour
 {
 
     //public List<bool> CharInfos = new List<bool>();
+    [SerializeField]
     public ArrayList CharArray = new ArrayList();
     public GameObject Char1;
     GameObject CharUI;
@@ -41,7 +42,7 @@ public class DataManager : MonoBehaviour
 
 
         CharUI = GameObject.Find("MainUI");
-        for (int i = 1; i < 14; i++)
+        for (int i = 0; i < 13; i++)
         {
             //CharInfos.Add(false);
             CharArray.Add(false);
@@ -86,7 +87,7 @@ public class DataManager : MonoBehaviour
 
         CharArray[CharNum] = true;
 
-        Debug.Log(CharArray[CharNum]);
+     
 
 
     }
@@ -99,12 +100,42 @@ public class DataManager : MonoBehaviour
         {
             if(CharArray[i].Equals(true))
             {
-                GameObject.Find("CharImage_"+i).GetComponent<ImageSwitch>().SwichImage();
+                int z = i + 1;
+                GameObject.Find("CharImage_"+z).GetComponent<ImageSwitch>().SwichImage();
+    
             }
             
         }
 
     }
+
+
+    public void LoadCharInfo(int type)
+    {
+        Debug.Log(type);
+        if (CharArray[type].Equals(true))
+        {
+            int i = type+1;
+            GameObject.Find("CharTextTitle").GetComponent<TextMeshProUGUI>().text = GameObject.Find("CharImage_" + i).GetComponent<ImageSwitch>().TitleText.ToString();
+            GameObject.Find("CharTextMain").GetComponent<TextMeshProUGUI>().text = GameObject.Find("CharImage_" + i).GetComponent<ImageSwitch>().MainText.ToString();
+            GameObject.Find("CharImage_big").GetComponent<ImageSwitch>().sprite = GameObject.Find("CharImage_" + i).GetComponent<ImageSwitch>().sprite;
+            GameObject.Find("CharImage_big").GetComponent<ImageSwitch>().SwitchItemImage();
+            Debug.Log("2CharImage_" + i);
+        }
+        else if(CharArray[type].Equals(false))
+        {
+            int j = type+1;
+            GameObject.Find("CharTextTitle").GetComponent<TextMeshProUGUI>().text = defultTitletext.ToString();
+            GameObject.Find("CharTextMain").GetComponent<TextMeshProUGUI>().text = defultMaintext.ToString();
+            GameObject.Find("CharImage_big").GetComponent<ImageSwitch>().silhouette = GameObject.Find("CharImage_" + j).GetComponent<ImageSwitch>().silhouette;
+            GameObject.Find("CharImage_big").GetComponent<ImageSwitch>().SilhouetteImage();
+            Debug.Log("CharImage_" + j);
+            Debug.Log("charfalse");
+        }
+
+
+    }
+
 
     public void LoadItemInfo()
     {
