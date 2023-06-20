@@ -80,6 +80,7 @@ public class Mousecontrol : MonoBehaviour
                         sound.GetComponent<SoundManager>().PlayEffect(1);
                         GameObject.Find("SceneManage").GetComponent<DataManager>().AddCharInfo(hit.collider.GetComponent<CharData>().getNumber());
 
+                        // npc를 클릭하면 npc의 고유번호가 eventManager(= DialogueEvent)로 전달
                         dialogueEvent.EnableEvent(hit.collider.GetComponent<CharData>().getNumber());
                         ChatBubbleManager.isTalking = true;
                     }
