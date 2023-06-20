@@ -70,6 +70,12 @@ public class Mousecontrol : MonoBehaviour
                         
                     }
 
+
+                    if(hit.collider.CompareTag("ChatBubble"))
+                    {
+                        ChatBubbleManager.isChat = false;
+                        GameObject.Destroy(GameObject.FindWithTag("ChatBubble"));
+                    }
                 }
                 
             }
