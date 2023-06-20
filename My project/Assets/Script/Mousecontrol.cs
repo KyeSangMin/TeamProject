@@ -12,12 +12,17 @@ public class Mousecontrol : MonoBehaviour
     GameObject sound;
     bool SetCamera;
     //bool ScanActive;
+
+    DialogueEvent dialogueEvent;
+
     void Start()
     {
         GameObject.Find("Main Camera").GetComponent<CRTEffect>().enabled = false;
         sound = GameObject.Find("AudioManager");
         SetCamera = false;
         //ScanActive = false;
+
+        dialogueEvent = gameObject.GetComponent<DialogueEvent>();
     }
 
     // Update is called once per frame
@@ -74,7 +79,9 @@ public class Mousecontrol : MonoBehaviour
                     {
                         sound.GetComponent<SoundManager>().PlayEffect(1);
                         GameObject.Find("SceneManage").GetComponent<DataManager>().AddCharInfo(hit.collider.GetComponent<CharData>().getNumber());
-                        
+
+                        dialogueEvent.EnableEvent(hit.collider.GetComponent<CharData>().getNumber());
+                        ChatBubbleManager.isTalking = true;
                     }
                     if(hit.collider.CompareTag("ChatBubble"))
                     {

@@ -7692,6 +7692,7 @@ GameObject:
   - component: {fileID: 844804357}
   - component: {fileID: 844804358}
   - component: {fileID: 844804360}
+  - component: {fileID: 844804361}
   - component: {fileID: 844804359}
   m_Layer: 0
   m_Name: SceneManage
@@ -7803,8 +7804,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8be990bfcda4074b8f3cf872d70331f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  csvFile: {fileID: 4900000, guid: bc06dbc8c30db9740a0fce59bfbb684e, type: 3}
+  csvFile: {fileID: 4900000, guid: f3a29ffeb26f86a4d8d8b619b45c407b, type: 3}
   DebugTalkDataList: []
+--- !u!114 &844804361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844804353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3caed455631e0e64f89ae29879b58f78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &865225785
 GameObject:
   m_ObjectHideFlags: 0

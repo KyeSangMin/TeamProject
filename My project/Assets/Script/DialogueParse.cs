@@ -109,4 +109,9 @@ public class DialogueParse : MonoBehaviour
             return null;
         }
     }
+
+    public static List<string> GetEventNames()
+    {
+        return new List<string>(TalkDictionary.Keys);
+    }
 }
