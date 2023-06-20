@@ -8,13 +8,14 @@ public class Mousecontrol : MonoBehaviour
     // Start is called before the first frame update
 
 
-    
 
+    GameObject sound;
     bool SetCamera;
     //bool ScanActive;
     void Start()
     {
         GameObject.Find("Main Camera").GetComponent<CRTEffect>().enabled = false;
+        sound = GameObject.Find("AudioManager");
         SetCamera = false;
         //ScanActive = false;
     }
@@ -24,7 +25,7 @@ public class Mousecontrol : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-
+           
             Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             //RaycastHit hit;
@@ -40,11 +41,13 @@ public class Mousecontrol : MonoBehaviour
                   
                     if(hit.collider.CompareTag("ScanItem"))
                     {
-                       
+                        sound.GetComponent<SoundManager>().PlayEffect(1);
                         GameObject.Find("Main Camera").GetComponent<FollowCam>().ShakeTime = 0.5f;
                  
                         GameObject.Find("MainUI").GetComponent<NoiseEffect>().StartNose(0.1f);
+                        hit.collider.gameObject.GetComponent<ScanItem>().ClickItem();
                         hit.collider.gameObject.SetActive(false);
+                        
                     }
 
                 }
@@ -52,29 +55,31 @@ public class Mousecontrol : MonoBehaviour
                 {
                     if (hit.collider.CompareTag("RightPoint"))
                     {
-                       
+                        sound.GetComponent<SoundManager>().PlayEffect(2);
                         GameObject.Find("SceneManage").GetComponent<SceneManage>().NextSceneLoad(SceneManage.SceneNum);
                     }
                     if (hit.collider.CompareTag("LeftPoint"))
                     {
+                        sound.GetComponent<SoundManager>().PlayEffect(2);
                         GameObject.Find("SceneManage").GetComponent<SceneManage>().BeforeSceneLoad(SceneManage.SceneNum);
                     } 
                     if(hit.collider.CompareTag("Item"))
                     {
-                        hit.collider.gameObject.SetActive(false); 
+                        sound.GetComponent<SoundManager>().PlayEffect(1);
+                        hit.collider.gameObject.GetComponent<ScanItem>().ClickItem();
+                        hit.collider.gameObject.SetActive(false);
+                       
                     }
                     if(hit.collider.CompareTag("NPC"))
                     {
-                        
-                            GameObject.Find("SceneManage").GetComponent<DataManager>().AddCharInfo(hit.collider.GetComponent<CharData>().getNumber());
+                        sound.GetComponent<SoundManager>().PlayEffect(1);
+                        GameObject.Find("SceneManage").GetComponent<DataManager>().AddCharInfo(hit.collider.GetComponent<CharData>().getNumber());
                         
                     }
-
-
                     if(hit.collider.CompareTag("ChatBubble"))
                     {
                         ChatBubbleManager.isChat = false;
-                        GameObject.Destroy(GameObject.FindWithTag("ChatBubble"));
+                        Destroy(GameObject.FindWithTag("ChatBubble"));
                     }
                 }
                 

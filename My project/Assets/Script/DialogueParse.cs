@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// DialogueParse.cs
+/// SceneManage에 적용
 /// 외부 csv 파일을 파싱
 /// 파싱한 정보를 저장
 /// GetDialogue함수로 파싱한 대화정보를 eventName 단위로 전달

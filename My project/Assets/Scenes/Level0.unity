@@ -772,6 +772,7 @@ GameObject:
   - component: {fileID: 1205144053}
   - component: {fileID: 1205144052}
   - component: {fileID: 1205144055}
+  - component: {fileID: 1205144056}
   m_Layer: 0
   m_Name: SparkleItem
   m_TagString: Item
@@ -893,6 +894,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.48187053, y: 0.42698514}
   m_EdgeRadius: 0
+--- !u!114 &1205144056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205144051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb684a7e55eddc4cadd67d6223623c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemIndex: 1
 --- !u!1 &1226651911
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,6 +977,7 @@ GameObject:
   - component: {fileID: 1348169707}
   - component: {fileID: 1348169706}
   - component: {fileID: 1348169705}
+  - component: {fileID: 1348169709}
   m_Layer: 0
   m_Name: SparkleItem_Scan
   m_TagString: ScanItem
@@ -1084,6 +1099,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1348169709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348169704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb684a7e55eddc4cadd67d6223623c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemIndex: 10
 --- !u!1 &1392255289
 GameObject:
   m_ObjectHideFlags: 0
