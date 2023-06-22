@@ -77,12 +77,51 @@ public class Mousecontrol : MonoBehaviour
                     }
                     if(hit.collider.CompareTag("NPC"))
                     {
-                        sound.GetComponent<SoundManager>().PlayEffect(1);
-                        GameObject.Find("SceneManage").GetComponent<DataManager>().AddCharInfo(hit.collider.GetComponent<CharData>().getNumber());
+                        CharData target = hit.collider.GetComponent<CharData>();
 
-                        // npc를 클릭하면 npc의 고유번호가 eventManager(= DialogueEvent)로 전달
-                        dialogueEvent.EnableEvent(hit.collider.GetComponent<CharData>().getNumber());
-                        ChatBubbleManager.isTalking = true;
+                        sound.GetComponent<SoundManager>().PlayEffect(1);
+                        GameObject.Find("SceneManage").GetComponent<DataManager>().AddCharInfo(target.getNumber());
+
+                        /// if(아이템 넘버 data가 존재할 경우)
+                        ///     target.CallEvent(아이템 넘버)
+                        if (target.CharEvent == 0) target.CallEvent(10);    // 아이템 9번 data 테스트
+
+                        switch (target.CharEvent)
+                        {
+                            // 0: 인사말, 1: 반복 대사, 2~21: 아이템별 상호작용 대사, 22~24: 확장가능공간(이벤트 추가시 사용)
+                            // 250~255: 고정 이벤트 인덱스(연락, 차장실에서 설명충 on, 맞췄을때, 못맞췄을때)
+                            case 0:
+                                // npc를 클릭하면 npc의 고유번호가 eventManager(= DialogueEvent)로 전달
+                                dialogueEvent.EnableEvent(target.getNumber(), target.FirstContect());
+                                ChatBubbleManager.isTalking = true;
+                                break;
+
+                            case 1:
+                            case int n when (n >= 2 && n <= 24):
+                                dialogueEvent.EnableEvent(target.getNumber(), target.CharEvent);
+                                ChatBubbleManager.isTalking = true;
+                                target.EndEvent();
+                                break;
+
+                            case int n when (n >= 250 && n <= 255):
+                                dialogueEvent.EnableEvent(0, target.CharEvent);
+                                ChatBubbleManager.isTalking = true;
+                                target.EndEvent();
+                                break;
+
+                            default:
+                                dialogueEvent.EnableEvent(target.getNumber(), 1);
+                                ChatBubbleManager.isTalking = true;
+                                break;
+                        }
+
+                        //if (target.CharEvent == 0)
+                        //{
+                        //    // npc를 클릭하면 npc의 고유번호가 eventManager(= DialogueEvent)로 전달
+                        //    dialogueEvent.EnableEvent(target.getNumber(), target.FirstContect());
+                        //    ChatBubbleManager.isTalking = true;
+                        //}
+                        
                     }
                     if(hit.collider.CompareTag("ChatBubble"))
                     {
