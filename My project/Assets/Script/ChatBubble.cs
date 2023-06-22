@@ -15,6 +15,9 @@ public class ChatBubble : MonoBehaviour
         Transform chatBubbleTransform = Instantiate(GameAssets.i.pfChatBubble, parent);
         chatBubbleTransform.localPosition = localPosition;
 
+        if(localPosition.x < 0)
+            chatBubbleTransform.Find("Background").GetComponent<SpriteRenderer>().flipX = true;
+
         chatBubbleTransform.GetComponent<ChatBubble>().Setup(text);
     }
 

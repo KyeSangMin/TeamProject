@@ -114,14 +114,6 @@ public class Mousecontrol : MonoBehaviour
                                 ChatBubbleManager.isTalking = true;
                                 break;
                         }
-
-                        //if (target.CharEvent == 0)
-                        //{
-                        //    // npc를 클릭하면 npc의 고유번호가 eventManager(= DialogueEvent)로 전달
-                        //    dialogueEvent.EnableEvent(target.getNumber(), target.FirstContect());
-                        //    ChatBubbleManager.isTalking = true;
-                        //}
-                        
                     }
                     if(hit.collider.CompareTag("ChatBubble"))
                     {
