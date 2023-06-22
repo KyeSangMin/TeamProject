@@ -68,10 +68,10 @@ public class ChatBubbleManager : MonoBehaviour
                     dataCount++;
                     break;
 
-                case "하르트만":
+                case "유나":
                     for (; contextCount < talkDatas[dataCount].contexts.Length;)
                     {
-                        Transform target = GameObject.Find("NPC_4").transform;
+                        Transform target = GameObject.Find("NPC_0").transform;
 
                         if (playerTransform.position.x < target.position.x)
                             ChatBubble.Create(target, new Vector3(-3.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
@@ -85,22 +85,10 @@ public class ChatBubbleManager : MonoBehaviour
                     dataCount++;
                     break;
 
-                case "세바스찬":
+                case "다니엘":
                     for (; contextCount < talkDatas[dataCount].contexts.Length;)
                     {
-                        ChatBubble.Create(playerTransform, defaultPos, talkDatas[dataCount].contexts[contextCount++]);
-                        isChat = true;
-                        yield return new WaitUntil(() => !isChat);
-                        continue;
-                    }
-                    contextCount = 0;
-                    dataCount++;
-                    break;
-
-                case "세르게이":
-                    for (; contextCount < talkDatas[dataCount].contexts.Length;)
-                    {
-                        Transform target = GameObject.Find("NPC_3").transform;
+                        Transform target = GameObject.Find("NPC_1").transform;
 
                         if (playerTransform.position.x < target.position.x)
                             ChatBubble.Create(target, new Vector3(-3.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
@@ -131,10 +119,15 @@ public class ChatBubbleManager : MonoBehaviour
                     dataCount++;
                     break;
 
-                case "다니엘":
+                case "세르게이":
                     for (; contextCount < talkDatas[dataCount].contexts.Length;)
                     {
-                        ChatBubble.Create(playerTransform, defaultPos, talkDatas[dataCount].contexts[contextCount++]);
+                        Transform target = GameObject.Find("NPC_3").transform;
+
+                        if (playerTransform.position.x < target.position.x)
+                            ChatBubble.Create(target, new Vector3(-3.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                        else
+                            ChatBubble.Create(target, new Vector3(1.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
                         isChat = true;
                         yield return new WaitUntil(() => !isChat);
                         continue;
@@ -143,10 +136,15 @@ public class ChatBubbleManager : MonoBehaviour
                     dataCount++;
                     break;
 
-                case "유나":
+                case "하르트만":
                     for (; contextCount < talkDatas[dataCount].contexts.Length;)
                     {
-                        ChatBubble.Create(playerTransform, defaultPos, talkDatas[dataCount].contexts[contextCount++]);
+                        Transform target = GameObject.Find("NPC_4").transform;
+
+                        if (playerTransform.position.x < target.position.x)
+                            ChatBubble.Create(target, new Vector3(-3.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                        else
+                            ChatBubble.Create(target, new Vector3(1.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
                         isChat = true;
                         yield return new WaitUntil(() => !isChat);
                         continue;
@@ -158,43 +156,12 @@ public class ChatBubbleManager : MonoBehaviour
                 case "얼릭":
                     for (; contextCount < talkDatas[dataCount].contexts.Length;)
                     {
-                        ChatBubble.Create(playerTransform, defaultPos, talkDatas[dataCount].contexts[contextCount++]);
-                        isChat = true;
-                        yield return new WaitUntil(() => !isChat);
-                        continue;
-                    }
-                    contextCount = 0;
-                    dataCount++;
-                    break;
+                        Transform target = GameObject.Find("NPC_5").transform;
 
-                case "타로":
-                    for (; contextCount < talkDatas[dataCount].contexts.Length;)
-                    {
-                        ChatBubble.Create(playerTransform, defaultPos, talkDatas[dataCount].contexts[contextCount++]);
-                        isChat = true;
-                        yield return new WaitUntil(() => !isChat);
-                        continue;
-                    }
-                    contextCount = 0;
-                    dataCount++;
-                    break;
-
-                case "김":
-                    for (; contextCount < talkDatas[dataCount].contexts.Length;)
-                    {
-                        ChatBubble.Create(playerTransform, defaultPos, talkDatas[dataCount].contexts[contextCount++]);
-                        isChat = true;
-                        yield return new WaitUntil(() => !isChat);
-                        continue;
-                    }
-                    contextCount = 0;
-                    dataCount++;
-                    break;
-
-                case "데이비드":
-                    for (; contextCount < talkDatas[dataCount].contexts.Length;)
-                    {
-                        ChatBubble.Create(playerTransform, defaultPos, talkDatas[dataCount].contexts[contextCount++]);
+                        if (playerTransform.position.x < target.position.x)
+                            ChatBubble.Create(target, new Vector3(-3.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                        else
+                            ChatBubble.Create(target, new Vector3(1.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
                         isChat = true;
                         yield return new WaitUntil(() => !isChat);
                         continue;
@@ -206,7 +173,63 @@ public class ChatBubbleManager : MonoBehaviour
                 case "현식":
                     for (; contextCount < talkDatas[dataCount].contexts.Length;)
                     {
-                        ChatBubble.Create(playerTransform, defaultPos, talkDatas[dataCount].contexts[contextCount++]);
+                        Transform target = GameObject.Find("NPC_6").transform;
+
+                        if (playerTransform.position.x < target.position.x)
+                            ChatBubble.Create(target, new Vector3(-3.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                        else
+                            ChatBubble.Create(target, new Vector3(1.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                        isChat = true;
+                        yield return new WaitUntil(() => !isChat);
+                        continue;
+                    }
+                    contextCount = 0;
+                    dataCount++;
+                    break;
+
+                case "김":
+                    for (; contextCount < talkDatas[dataCount].contexts.Length;)
+                    {
+                        Transform target = GameObject.Find("NPC_7").transform;
+
+                        if (playerTransform.position.x < target.position.x)
+                            ChatBubble.Create(target, new Vector3(-3.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                        else
+                            ChatBubble.Create(target, new Vector3(1.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                        isChat = true;
+                        yield return new WaitUntil(() => !isChat);
+                        continue;
+                    }
+                    contextCount = 0;
+                    dataCount++;
+                    break;
+
+                case "데이비드":
+                    for (; contextCount < talkDatas[dataCount].contexts.Length;)
+                    {
+                        Transform target = GameObject.Find("NPC_8").transform;
+
+                        if (playerTransform.position.x < target.position.x)
+                            ChatBubble.Create(target, new Vector3(-3.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                        else
+                            ChatBubble.Create(target, new Vector3(1.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                        isChat = true;
+                        yield return new WaitUntil(() => !isChat);
+                        continue;
+                    }
+                    contextCount = 0;
+                    dataCount++;
+                    break;
+
+                case "타로":
+                    for (; contextCount < talkDatas[dataCount].contexts.Length;)
+                    {
+                        Transform target = GameObject.Find("NPC_9").transform;
+
+                        if (playerTransform.position.x < target.position.x)
+                            ChatBubble.Create(target, new Vector3(-3.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                        else
+                            ChatBubble.Create(target, new Vector3(1.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
                         isChat = true;
                         yield return new WaitUntil(() => !isChat);
                         continue;
@@ -216,9 +239,24 @@ public class ChatBubbleManager : MonoBehaviour
                     break;
 
                 case "외부인":
+                    Transform outsiderSpriteTransform = GameObject.Instantiate(GameAssets.i.pfOutsiderSprite, playerTransform);
+                    outsiderSpriteTransform.localPosition = new Vector3(-1.5f, 2.0f, 1.0f);
                     for (; contextCount < talkDatas[dataCount].contexts.Length;)
                     {
-                        ChatBubble.Create(playerTransform, new Vector3(-1.2f, 0.8f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                        ChatBubble.Create(playerTransform, new Vector3(0.0f, 2.0f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                        isChat = true;
+                        yield return new WaitUntil(() => !isChat);
+                        continue;
+                    }
+                    Destroy(outsiderSpriteTransform.gameObject);
+                    contextCount = 0;
+                    dataCount++;
+                    break;
+
+                case "세바스찬":
+                    for (; contextCount < talkDatas[dataCount].contexts.Length;)
+                    {
+                        ChatBubble.Create(playerTransform, defaultPos, talkDatas[dataCount].contexts[contextCount++]);
                         isChat = true;
                         yield return new WaitUntil(() => !isChat);
                         continue;
