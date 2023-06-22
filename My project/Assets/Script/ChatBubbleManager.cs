@@ -10,6 +10,8 @@ public class ChatBubbleManager : MonoBehaviour
 {
     [SerializeField]private Transform playerTransform;
     private Vector3 defaultPos = new Vector3(1.2f, 0.5f, 1.0f);
+    private Vector3 defaultRightPos = new Vector3(0.9f, 1.2f, 1.0f);
+    private Vector3 defaultLeftPos = new Vector3(-2.1f, 1.2f, 1.0f);
 
     // 현재 발생한 이벤트이름
     private string _currentEvent;
@@ -74,9 +76,9 @@ public class ChatBubbleManager : MonoBehaviour
                         Transform target = GameObject.Find("NPC_0").transform;
 
                         if (playerTransform.position.x < target.position.x)
-                            ChatBubble.Create(target, new Vector3(-3.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                            ChatBubble.Create(target, defaultLeftPos, talkDatas[dataCount].contexts[contextCount++]);
                         else
-                            ChatBubble.Create(target, new Vector3(1.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                            ChatBubble.Create(target, defaultRightPos, talkDatas[dataCount].contexts[contextCount++]);
                         isChat = true;
                         yield return new WaitUntil(() => !isChat);
                         continue;
@@ -91,9 +93,9 @@ public class ChatBubbleManager : MonoBehaviour
                         Transform target = GameObject.Find("NPC_1").transform;
 
                         if (playerTransform.position.x < target.position.x)
-                            ChatBubble.Create(target, new Vector3(-3.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                            ChatBubble.Create(target, defaultLeftPos, talkDatas[dataCount].contexts[contextCount++]);
                         else
-                            ChatBubble.Create(target, new Vector3(1.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                            ChatBubble.Create(target, defaultRightPos, talkDatas[dataCount].contexts[contextCount++]);
                         isChat = true;
                         yield return new WaitUntil(() => !isChat);
                         continue;
@@ -108,9 +110,9 @@ public class ChatBubbleManager : MonoBehaviour
                         Transform target = GameObject.Find("NPC_2").transform;
 
                         if (playerTransform.position.x < target.position.x)
-                            ChatBubble.Create(target, new Vector3(-3.3f, 2.5f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                            ChatBubble.Create(target, new Vector3(-4.2f, 2.6f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
                         else
-                            ChatBubble.Create(target, new Vector3(1.3f, 2.5f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                            ChatBubble.Create(target, new Vector3(1.5f, 2.6f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
                         isChat = true;
                         yield return new WaitUntil(() => !isChat);
                         continue;
@@ -125,9 +127,9 @@ public class ChatBubbleManager : MonoBehaviour
                         Transform target = GameObject.Find("NPC_3").transform;
 
                         if (playerTransform.position.x < target.position.x)
-                            ChatBubble.Create(target, new Vector3(-3.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                            ChatBubble.Create(target, defaultLeftPos, talkDatas[dataCount].contexts[contextCount++]);
                         else
-                            ChatBubble.Create(target, new Vector3(1.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                            ChatBubble.Create(target, defaultRightPos, talkDatas[dataCount].contexts[contextCount++]);
                         isChat = true;
                         yield return new WaitUntil(() => !isChat);
                         continue;
@@ -142,9 +144,9 @@ public class ChatBubbleManager : MonoBehaviour
                         Transform target = GameObject.Find("NPC_4").transform;
 
                         if (playerTransform.position.x < target.position.x)
-                            ChatBubble.Create(target, new Vector3(-3.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                            ChatBubble.Create(target, defaultLeftPos, talkDatas[dataCount].contexts[contextCount++]);
                         else
-                            ChatBubble.Create(target, new Vector3(1.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                            ChatBubble.Create(target, defaultRightPos, talkDatas[dataCount].contexts[contextCount++]);
                         isChat = true;
                         yield return new WaitUntil(() => !isChat);
                         continue;
@@ -159,9 +161,9 @@ public class ChatBubbleManager : MonoBehaviour
                         Transform target = GameObject.Find("NPC_5").transform;
 
                         if (playerTransform.position.x < target.position.x)
-                            ChatBubble.Create(target, new Vector3(-3.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                            ChatBubble.Create(target, defaultLeftPos, talkDatas[dataCount].contexts[contextCount++]);
                         else
-                            ChatBubble.Create(target, new Vector3(1.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                            ChatBubble.Create(target, defaultRightPos, talkDatas[dataCount].contexts[contextCount++]);
                         isChat = true;
                         yield return new WaitUntil(() => !isChat);
                         continue;
@@ -176,9 +178,9 @@ public class ChatBubbleManager : MonoBehaviour
                         Transform target = GameObject.Find("NPC_6").transform;
 
                         if (playerTransform.position.x < target.position.x)
-                            ChatBubble.Create(target, new Vector3(-3.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                            ChatBubble.Create(target, defaultLeftPos, talkDatas[dataCount].contexts[contextCount++]);
                         else
-                            ChatBubble.Create(target, new Vector3(1.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                            ChatBubble.Create(target, defaultRightPos, talkDatas[dataCount].contexts[contextCount++]);
                         isChat = true;
                         yield return new WaitUntil(() => !isChat);
                         continue;
@@ -193,9 +195,9 @@ public class ChatBubbleManager : MonoBehaviour
                         Transform target = GameObject.Find("NPC_7").transform;
 
                         if (playerTransform.position.x < target.position.x)
-                            ChatBubble.Create(target, new Vector3(-3.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                            ChatBubble.Create(target, defaultLeftPos, talkDatas[dataCount].contexts[contextCount++]);
                         else
-                            ChatBubble.Create(target, new Vector3(1.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                            ChatBubble.Create(target, defaultRightPos, talkDatas[dataCount].contexts[contextCount++]);
                         isChat = true;
                         yield return new WaitUntil(() => !isChat);
                         continue;
@@ -210,9 +212,9 @@ public class ChatBubbleManager : MonoBehaviour
                         Transform target = GameObject.Find("NPC_8").transform;
 
                         if (playerTransform.position.x < target.position.x)
-                            ChatBubble.Create(target, new Vector3(-3.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                            ChatBubble.Create(target, defaultLeftPos, talkDatas[dataCount].contexts[contextCount++]);
                         else
-                            ChatBubble.Create(target, new Vector3(1.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                            ChatBubble.Create(target, defaultRightPos, talkDatas[dataCount].contexts[contextCount++]);
                         isChat = true;
                         yield return new WaitUntil(() => !isChat);
                         continue;
@@ -227,9 +229,9 @@ public class ChatBubbleManager : MonoBehaviour
                         Transform target = GameObject.Find("NPC_9").transform;
 
                         if (playerTransform.position.x < target.position.x)
-                            ChatBubble.Create(target, new Vector3(-3.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                            ChatBubble.Create(target, defaultLeftPos, talkDatas[dataCount].contexts[contextCount++]);
                         else
-                            ChatBubble.Create(target, new Vector3(1.1f, 1.4f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                            ChatBubble.Create(target, defaultRightPos, talkDatas[dataCount].contexts[contextCount++]);
                         isChat = true;
                         yield return new WaitUntil(() => !isChat);
                         continue;
@@ -249,18 +251,6 @@ public class ChatBubbleManager : MonoBehaviour
                         continue;
                     }
                     Destroy(outsiderSpriteTransform.gameObject);
-                    contextCount = 0;
-                    dataCount++;
-                    break;
-
-                case "세바스찬":
-                    for (; contextCount < talkDatas[dataCount].contexts.Length;)
-                    {
-                        ChatBubble.Create(playerTransform, defaultPos, talkDatas[dataCount].contexts[contextCount++]);
-                        isChat = true;
-                        yield return new WaitUntil(() => !isChat);
-                        continue;
-                    }
                     contextCount = 0;
                     dataCount++;
                     break;
