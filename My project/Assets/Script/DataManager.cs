@@ -36,6 +36,19 @@ public class DataManager : MonoBehaviour
     public string defultTitletext;
     public string defultMaintext;
 
+
+    public GameObject Puzzle1;
+    public GameObject Puzzle2;
+    public GameObject Puzzle3;
+
+    public bool Door0to1;
+    public bool Door2to3;
+    public bool Door5to6;
+    public GameObject instpuzzle;
+    public GameObject instpuzzle2;
+    public GameObject instpuzzle3;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +60,9 @@ public class DataManager : MonoBehaviour
             //CharInfos.Add(false);
             CharArray.Add(false);
         }
+        CharArray[0] = true;
+        CharArray[6] = true;
+        CharArray[12] = true;
 
         Item1 = false;
         Item2 = false;
@@ -70,8 +86,15 @@ public class DataManager : MonoBehaviour
         Item20 = false;
         ItemList = 1;
 
+        Door0to1 = false;
+        Door2to3 = false;
+        Door5to6 = false;
+
+        
+
         defultTitletext = "????";
         defultMaintext = "?????????";
+        
     }
 
 
@@ -102,7 +125,9 @@ public class DataManager : MonoBehaviour
             {
                 int z = i + 1;
                 GameObject.Find("CharImage_"+z).GetComponent<ImageSwitch>().SwichImage();
-    
+                GameObject.Find("CharName_" + z).GetComponent<SwitchName>().Switchname();
+                //GameObject.Find("CharName_" + z).GetComponent<TextMeshProUGUI>().text = GameObject.Find("CharName_" + z).GetComponent<SwitchName>().Charname.ToString();
+
             }
             
         }
@@ -118,16 +143,17 @@ public class DataManager : MonoBehaviour
             int i = type+1;
             GameObject.Find("CharTextTitle").GetComponent<TextMeshProUGUI>().text = GameObject.Find("CharImage_" + i).GetComponent<ImageSwitch>().TitleText.ToString();
             GameObject.Find("CharTextMain").GetComponent<TextMeshProUGUI>().text = GameObject.Find("CharImage_" + i).GetComponent<ImageSwitch>().MainText.ToString();
-            GameObject.Find("CharImage_big").GetComponent<ImageSwitch>().sprite = GameObject.Find("CharImage_" + i).GetComponent<ImageSwitch>().sprite;
+            GameObject.Find("CharImage_big").GetComponent<ImageSwitch>().sprite = GameObject.Find("CharImage_" + i).GetComponent<ImageSwitch>().StandSprite;
             GameObject.Find("CharImage_big").GetComponent<ImageSwitch>().SwitchItemImage();
             Debug.Log("2CharImage_" + i);
+           
         }
         else if(CharArray[type].Equals(false))
         {
             int j = type+1;
             GameObject.Find("CharTextTitle").GetComponent<TextMeshProUGUI>().text = defultTitletext.ToString();
             GameObject.Find("CharTextMain").GetComponent<TextMeshProUGUI>().text = defultMaintext.ToString();
-            GameObject.Find("CharImage_big").GetComponent<ImageSwitch>().silhouette = GameObject.Find("CharImage_" + j).GetComponent<ImageSwitch>().silhouette;
+            GameObject.Find("CharImage_big").GetComponent<ImageSwitch>().silhouette = GameObject.Find("CharImage_" + j).GetComponent<ImageSwitch>().silhouetteStandSprite;
             GameObject.Find("CharImage_big").GetComponent<ImageSwitch>().SilhouetteImage();
             Debug.Log("CharImage_" + j);
             Debug.Log("charfalse");
@@ -136,6 +162,84 @@ public class DataManager : MonoBehaviour
 
     }
 
+    public void CheckDoor()
+    {
+        if (instpuzzle|| instpuzzle2|| instpuzzle3)
+        {
+            return;
+        }
+        else
+        {
+      
+            switch (GameObject.Find("SceneManage").GetComponent<SceneManage>().getSceneNum())
+            {
+
+                case 0:
+                    if(Door0to1)
+                    {
+                        GameObject.Find("SceneManage").GetComponent<SceneManage>().NextSceneLoad(SceneManage.SceneNum);
+                        Debug.Log("1");
+                        return;
+                  
+                    }
+                    else
+                    {
+
+                        instpuzzle = Instantiate(Puzzle1);
+                        instpuzzle.SetActive(true);
+                        //Puzzle1.SetActive(true);
+                        Debug.Log("2");
+                    
+                    }
+                    break;
+
+                case 2:
+                    if(Door2to3)
+                    {
+                        GameObject.Find("SceneManage").GetComponent<SceneManage>().NextSceneLoad(SceneManage.SceneNum);
+                        return;
+                    }
+                    else
+                    {
+                        instpuzzle2 = Instantiate(Puzzle2);
+                        instpuzzle2.SetActive(true);
+                    }
+                    break;
+
+                case 5:
+                    if(Door5to6)
+                    {
+                        GameObject.Find("SceneManage").GetComponent<SceneManage>().NextSceneLoad(SceneManage.SceneNum);
+                        return;
+                    }
+                    else
+                    {
+                        instpuzzle3 = Instantiate(Puzzle3);
+                        instpuzzle3.SetActive(true);
+                    }
+                    break;
+
+                default:
+                    GameObject.Find("SceneManage").GetComponent<SceneManage>().NextSceneLoad(SceneManage.SceneNum);
+                    break;
+
+
+            }
+        }
+    }
+
+    public void DestroyPuzzle()
+    {
+
+            Destroy(instpuzzle);
+
+
+            Destroy(instpuzzle2);
+
+
+            Destroy(instpuzzle3);
+
+    }
 
     public void LoadItemInfo()
     {
@@ -509,6 +613,14 @@ public class DataManager : MonoBehaviour
             default:
                 break;
         }
+    }
+
+
+    public bool CheckItem(int ItemNum)
+    {
+        
+
+        return false;
     }
 
 }

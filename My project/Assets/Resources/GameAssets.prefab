@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pfChatBubble: {fileID: 194001895188951555, guid: e7fe4040eb35d2442b0d12d9cec038b8, type: 3}
+  pfOutsiderSprite: {fileID: 3892861838098885249, guid: 5ead352f0d7e7df4ea98e29d8d5f7131, type: 3}

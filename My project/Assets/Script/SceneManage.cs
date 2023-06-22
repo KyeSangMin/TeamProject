@@ -17,7 +17,9 @@ public class SceneManage : MonoBehaviour
     GameObject MainUI;
     public static int SceneNum;
     GameObject sound;
-    GameObject RetrunButton;
+    GameObject configbutton;
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,12 +28,13 @@ public class SceneManage : MonoBehaviour
         //Scene Openscene;
         sound = GameObject.Find("AudioManager");
         startbutton = GameObject.Find("StartButton");
+        configbutton = GameObject.Find("config");
         FadeCg.alpha = 0.0f;
         MainUI = GameObject.Find("MainUI");
         MainUI.SetActive(false);
         SceneNum = 0;
         StartCoroutine(Black());
-        RetrunButton = GameObject.Find("RetrunButton");
+        
 
 
     }
@@ -208,11 +211,12 @@ public class SceneManage : MonoBehaviour
     public void LoadConfig()
     {
         StartCoroutine(Fade(0.0f));
-        sound.GetComponent<SoundManager>().PlayBgm(1);
+        //sound.GetComponent<SoundManager>().PlayBgm(1);
         scenesToLoad.Add(SceneManager.LoadSceneAsync("Config", LoadSceneMode.Additive));
         scenesToLoad.Remove(SceneManager.UnloadSceneAsync("OpenScene"));
-        GameObject.Find("MainCanvas").SetActive(false) ;
-        RetrunButton.SetActive(true);
+        GameObject.Find("StartButton").SetActive(false) ;
+        GameObject.Find("config").SetActive(false);
+
 
         //SceneManager.LoadScene("Config");
 
@@ -221,13 +225,14 @@ public class SceneManage : MonoBehaviour
 
     public void ReturnMain()
     {
-        GameObject.Find("MainCanvas").SetActive(true);
+        
         StartCoroutine(Fade(0.0f));
-        sound.GetComponent<SoundManager>().PlayBgm(1);
+        //GameObject.Find("MainCanvas").SetActive(true);
+        //sound.GetComponent<SoundManager>().PlayBgm(1);
         scenesToLoad.Add(SceneManager.LoadSceneAsync("OpenScene", LoadSceneMode.Additive));
         scenesToLoad.Remove(SceneManager.UnloadSceneAsync("Config"));
-        GameObject.Find("MainCanvas").SetActive(true);
-        RetrunButton.SetActive(false);
+        startbutton.SetActive(true);
+        configbutton.SetActive(true);
 
 
     }
@@ -332,7 +337,6 @@ public class SceneManage : MonoBehaviour
         
         yield return new WaitForSeconds(0.75f);
         GameObject.Find("BlackImage").SetActive(false);
-        RetrunButton.SetActive(false);
         SceneManager.LoadSceneAsync("OpenScene", LoadSceneMode.Additive);
         sound.GetComponent<SoundManager>().PlayBgm(0);
     }

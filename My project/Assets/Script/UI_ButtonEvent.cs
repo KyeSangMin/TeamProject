@@ -12,6 +12,7 @@ public class UI_ButtonEvent : MonoBehaviour
     GameObject MapInfo;
     GameObject CharInfo_Inside;
     GameObject sound;
+    public bool UiSetUp;
     //GameObject Dialogue_UI;
 
     // Start is called before the first frame update
@@ -33,7 +34,7 @@ public class UI_ButtonEvent : MonoBehaviour
         ItemInfo.SetActive(false);
         MapInfo.SetActive(false);
         CharInfo_Inside.SetActive(false);
-
+        UiSetUp = false;
 
     }
 
@@ -48,6 +49,7 @@ public class UI_ButtonEvent : MonoBehaviour
     public void SetPuzzleActive()
     {
         sound.GetComponent<SoundManager>().PlayEffect(1);
+
         if (Puzzle_UI.activeSelf == true)
         {
             Puzzle_UI.SetActive(false);
@@ -64,6 +66,7 @@ public class UI_ButtonEvent : MonoBehaviour
     public void SetPadActive()
     {
         sound.GetComponent<SoundManager>().PlayEffect(1);
+        GameObject.Find("SceneManage").GetComponent<DataManager>().DestroyPuzzle();
         if (PAD_UI.activeSelf == true)
         {
             PAD_UI.SetActive(false);
@@ -71,6 +74,7 @@ public class UI_ButtonEvent : MonoBehaviour
             ItemInfo.SetActive(false);
             MapInfo.SetActive(false);
             CharInfo_Inside.SetActive(false);
+            UiSetUp = false;
         }
         else
         {
@@ -79,6 +83,7 @@ public class UI_ButtonEvent : MonoBehaviour
             ItemInfo.SetActive(false);
             MapInfo.SetActive(false);
             CharInfo_Inside.SetActive(false);
+            UiSetUp = true;
 
         }
     }
@@ -422,7 +427,15 @@ public class UI_ButtonEvent : MonoBehaviour
         GameObject.Find("SceneManage").GetComponent<DataManager>().LoadItemInfo();
     }
 
+    public void GetItemInfo()
+    {
+        sound.GetComponent<SoundManager>().PlayEffect(1);
+        GameObject.Find("SceneManage").GetComponent<Mousecontrol>().GetItem = true;
+        Debug.Log("GetItem");
 
+
+
+    }
 
     /*
     public void SetDialogueActive()
