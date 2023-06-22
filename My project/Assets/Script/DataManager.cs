@@ -158,8 +158,6 @@ public class DataManager : MonoBehaviour
             Debug.Log("CharImage_" + j);
             Debug.Log("charfalse");
         }
-
-
     }
 
     public void CheckDoor()

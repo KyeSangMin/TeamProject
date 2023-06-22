@@ -431,9 +431,10 @@ public class UI_ButtonEvent : MonoBehaviour
     {
         sound.GetComponent<SoundManager>().PlayEffect(1);
         GameObject.Find("SceneManage").GetComponent<Mousecontrol>().GetItem = true;
+        int i =GameObject.Find("SceneManage").GetComponent<DataManager>().ItemList;
+        GameObject.Find("Button").GetComponent<ImageSwitch>().sprite = GameObject.Find("ItemImage_"+i).GetComponent<ImageSwitch>().sprite;
+        GameObject.Find("Button").GetComponent<ImageSwitch>().SwitchItemImage();
         Debug.Log("GetItem");
-
-
 
     }
 

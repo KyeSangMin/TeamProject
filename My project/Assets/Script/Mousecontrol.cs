@@ -23,7 +23,7 @@ public class Mousecontrol : MonoBehaviour
         dialogueEvent = gameObject.GetComponent<DialogueEvent>();
 
         //UiPad = GameObject.Find("MainUI").GetComponent<UI_ButtonEvent>();
-        ScanInfo = GameObject.Find("'ScanInfo");
+        ScanInfo = GameObject.Find("ScanInfo");
         sound = GameObject.Find("AudioManager");
         SetCamera = false;
         GetItem = false;
@@ -58,7 +58,10 @@ public class Mousecontrol : MonoBehaviour
                             case int n when (n >= 1 && n <= 20):
                                 GetItem = false;
                                 target.CallEvent(GameObject.Find("SceneManage").GetComponent<DataManager>().ItemList+1);
+                                GameObject.Find("Button").GetComponent<ImageSwitch>().sprite = GameObject.Find("Button").GetComponent<ImageSwitch>().silhouette;
+                                GameObject.Find("Button").GetComponent<ImageSwitch>().SwitchItemImage();
                                 break;
+
 
                             default:
                                 break;
@@ -95,6 +98,8 @@ public class Mousecontrol : MonoBehaviour
                     else
                     {
                         GetItem = false;
+                        GameObject.Find("Button").GetComponent<ImageSwitch>().sprite = GameObject.Find("Button").GetComponent<ImageSwitch>().silhouette;
+                        GameObject.Find("Button").GetComponent<ImageSwitch>().SwitchItemImage();
                         Debug.Log("false");
                     }
 
@@ -230,6 +235,7 @@ public class Mousecontrol : MonoBehaviour
             else
             {
                 GameObject.Find("Main Camera").GetComponent<CRTEffect>().enabled = false;
+                GameObject.Find("ScanInfo").GetComponent<UnuseScanItem>().offUnsedUI();
                 SetCamera = false;
             }
         }
