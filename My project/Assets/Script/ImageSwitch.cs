@@ -12,8 +12,11 @@ public class ImageSwitch : MonoBehaviour
   
     public Sprite sprite;
     public Sprite silhouette;
+    public Sprite silhouetteStandSprite;
+    public Sprite StandSprite;
     public string TitleText;
     public string MainText;
+
     // Start is called before the first frame update
     void Start()
     {

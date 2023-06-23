@@ -9,11 +9,13 @@ public class PuzzleManager : MonoBehaviour
     public GameObject TileseHolder;
     public GameObject[ ] Tiles;
 
+    public int puzzleNum;
+
     [SerializeField]
     int totalTiles = 0;
     [SerializeField]
     int CorrectedTiles = 0;
-
+    
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +39,28 @@ public class PuzzleManager : MonoBehaviour
         Debug.Log(CorrectedTiles);
         if (CorrectedTiles == totalTiles)
         {
-            Debug.Log("win");
+            switch(puzzleNum)
+            {
+
+                case 1:
+                    GameObject.Find("SceneManage").GetComponent<DataManager>().Door0to1 = true;
+                    GameObject.Find("SceneManage").GetComponent<DataManager>().DestroyPuzzle();
+                    break;
+
+                case 2:
+                    GameObject.Find("SceneManage").GetComponent<DataManager>().Door2to3 = true;
+                    GameObject.Find("SceneManage").GetComponent<DataManager>().DestroyPuzzle();
+                    break;
+
+                case 3:
+                    GameObject.Find("SceneManage").GetComponent<DataManager>().Door5to6 = true;
+                    GameObject.Find("SceneManage").GetComponent<DataManager>().DestroyPuzzle();
+                    break;
+               
+
+                default:
+                    break;
+            }
         }
     }
 

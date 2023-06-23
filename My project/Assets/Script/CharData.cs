@@ -9,6 +9,7 @@ public class CharData : MonoBehaviour
 
     public int CharNumber;
     public int CharEvent;
+    private bool isFirst;
     /// CharEvent: 캐릭터 이벤트 넘버
     /// 캐릭터별로 지정된 이벤트 넘버링을 지정 및 정보를 저장
     /// 0: 인사말, 1: 반복 대사, 2~21: 아이템별 상호작용 대사, 22~24: 확장가능공간(이벤트 추가시 사용)
@@ -17,6 +18,7 @@ public class CharData : MonoBehaviour
     void Start()
     {
         CharEvent = 0;
+        isFirst = true;
     }
 
     // Update is called once per frame
@@ -32,6 +34,7 @@ public class CharData : MonoBehaviour
 
     public int FirstContect()
     {
+        isFirst = false;
         return CharEvent++;
     }
 
@@ -42,6 +45,9 @@ public class CharData : MonoBehaviour
 
     public void EndEvent()
     {
-        CharEvent = 1;
+        if (isFirst)
+            CharEvent = 0;
+        else
+            CharEvent = 1;
     }
 }

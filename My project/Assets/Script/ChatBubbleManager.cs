@@ -9,9 +9,9 @@ using UnityEngine;
 public class ChatBubbleManager : MonoBehaviour
 {
     [SerializeField]private Transform playerTransform;
-    private Vector3 defaultPos = new Vector3(1.2f, 0.5f, 1.0f);
-    private Vector3 defaultRightPos = new Vector3(0.9f, 1.2f, 1.0f);
-    private Vector3 defaultLeftPos = new Vector3(-2.1f, 1.2f, 1.0f);
+    private Vector3 defaultPos = new Vector3(1.7f, 0.75f, 1.0f);
+    private Vector3 defaultRightPos = new Vector3(1.2f, 1.5f, 1.0f);
+    private Vector3 defaultLeftPos = new Vector3(-1.2f, 1.5f, 1.0f);
 
     // 현재 발생한 이벤트이름
     private string _currentEvent;
@@ -110,9 +110,9 @@ public class ChatBubbleManager : MonoBehaviour
                         Transform target = GameObject.Find("NPC_2").transform;
 
                         if (playerTransform.position.x < target.position.x)
-                            ChatBubble.Create(target, new Vector3(-4.2f, 2.6f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                            ChatBubble.Create(target, new Vector3(-2.35f, 3.0f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
                         else
-                            ChatBubble.Create(target, new Vector3(1.5f, 2.6f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                            ChatBubble.Create(target, new Vector3(2.35f, 3.0f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
                         isChat = true;
                         yield return new WaitUntil(() => !isChat);
                         continue;
@@ -242,10 +242,10 @@ public class ChatBubbleManager : MonoBehaviour
 
                 case "외부인":
                     Transform outsiderSpriteTransform = GameObject.Instantiate(GameAssets.i.pfOutsiderSprite, playerTransform);
-                    outsiderSpriteTransform.localPosition = new Vector3(-1.5f, 2.0f, 1.0f);
+                    outsiderSpriteTransform.localPosition = new Vector3(-2.0f, 0.25f, 1.0f);
                     for (; contextCount < talkDatas[dataCount].contexts.Length;)
                     {
-                        ChatBubble.Create(playerTransform, new Vector3(0.0f, 2.0f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
+                        ChatBubble.Create(playerTransform, new Vector3(0.0f, 1.5f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
                         isChat = true;
                         yield return new WaitUntil(() => !isChat);
                         continue;

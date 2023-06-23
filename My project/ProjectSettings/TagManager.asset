@@ -9,6 +9,11 @@ TagManager:
   - Item
   - NPC
   - ScanItem
+  - ChatBubble
+  - PuzzleExit
+  - UnuseScan
+  - Return
+  - LockedDoor
   layers:
   - Default
   - TransparentFX
@@ -19,7 +24,7 @@ TagManager:
   - 
   - 
   - Puzzle
-  - 
+  - PuzzleExit
   - 
   - 
   - 
