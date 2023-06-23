@@ -47,6 +47,9 @@ public class DataManager : MonoBehaviour
     public GameObject instpuzzle;
     public GameObject instpuzzle2;
     public GameObject instpuzzle3;
+    DialogueEvent dialogueEvent;
+    public int EndEvent;
+    public List<int> CheckedList;
 
 
     // Start is called before the first frame update
@@ -90,11 +93,15 @@ public class DataManager : MonoBehaviour
         Door2to3 = false;
         Door5to6 = false;
 
-        
+     
 
         defultTitletext = "????";
         defultMaintext = "?????????";
+
+        EndEvent = 0;
+        dialogueEvent = gameObject.GetComponent<DialogueEvent>();
         
+
     }
 
 
@@ -102,19 +109,47 @@ public class DataManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
+
+    public void EndingEvent()
+    {
+        if (EndEvent == 20)
+        {
+
+            dialogueEvent.EnableEvent(0, 0);
+            ChatBubbleManager.isTalking = true;
+            EndEvent++;
+            Debug.Log("End");
+        }
+        else if (EndEvent == 21)
+        { 
+
+            dialogueEvent.EnableEvent(0, 0);
+            ChatBubbleManager.isTalking = true;
+            EndEvent++;
+            Debug.Log("Endaaa");
+        }
+     }
 
     public void AddCharInfo(int CharNum)
     {
 
         CharArray[CharNum] = true;
 
-     
-
 
     }
 
+    public void ListCheck(int i)
+    {
+        if(!CheckedList.Contains(i))
+        {
+            CheckedList.Add(i);
+            EndEvent++;
+            Debug.Log(EndEvent);
+        }
+
+    }
 
     public void CheckCharInfo()
     {

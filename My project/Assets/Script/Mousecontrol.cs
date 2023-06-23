@@ -51,13 +51,15 @@ public class Mousecontrol : MonoBehaviour
                 {
                     if (hit.collider.CompareTag("NPC"))
                     {
-
+                   
                         CharData target = hit.collider.GetComponent<CharData>();
                         switch (GameObject.Find("SceneManage").GetComponent<DataManager>().ItemList)
                         {
                             case int n when (n >= 1 && n <= 20):
                                 GetItem = false;
+                               
                                 target.CallEvent(GameObject.Find("SceneManage").GetComponent<DataManager>().ItemList+1);
+                                GameObject.Find("SceneManage").GetComponent<DataManager>().ListCheck(GameObject.Find("SceneManage").GetComponent<DataManager>().ItemList);
                                 GameObject.Find("Button").GetComponent<ImageSwitch>().sprite = GameObject.Find("Button").GetComponent<ImageSwitch>().silhouette;
                                 GameObject.Find("Button").GetComponent<ImageSwitch>().SwitchItemImage();
                                 break;
@@ -72,13 +74,13 @@ public class Mousecontrol : MonoBehaviour
                             // 250~255: 고정 이벤트 인덱스(연락, 차장실에서 설명충 on, 맞췄을때, 못맞췄을때)
                             case 0:
                                 // npc를 클릭하면 npc의 고유번호가 eventManager(= DialogueEvent)로 전달
-                                dialogueEvent.EnableEvent(target.getNumber() + 1, target.FirstContect());
+                                dialogueEvent.EnableEvent(target.getNumber(), target.FirstContect());
                                 ChatBubbleManager.isTalking = true;
                                 break;
 
                             case 1:
                             case int n when (n >= 2 && n <= 24):
-                                dialogueEvent.EnableEvent(target.getNumber() + 1, target.CharEvent);
+                                dialogueEvent.EnableEvent(target.getNumber(), target.CharEvent);
                                 ChatBubbleManager.isTalking = true;
                                 target.EndEvent();
                                 break;
@@ -90,10 +92,11 @@ public class Mousecontrol : MonoBehaviour
                                 break;
 
                             default:
-                                dialogueEvent.EnableEvent(target.getNumber() + 1, 1);
+                                dialogueEvent.EnableEvent(target.getNumber(), 1);
                                 ChatBubbleManager.isTalking = true;
                                 break;
                         }
+                        
                     }
                     else
                     {
@@ -177,13 +180,13 @@ public class Mousecontrol : MonoBehaviour
                                 // 250~255: 고정 이벤트 인덱스(연락, 차장실에서 설명충 on, 맞췄을때, 못맞췄을때)
                                 case 0:
                                     // npc를 클릭하면 npc의 고유번호가 eventManager(= DialogueEvent)로 전달
-                                    dialogueEvent.EnableEvent(target.getNumber()+1, target.FirstContect());
+                                    dialogueEvent.EnableEvent(target.getNumber(), target.FirstContect());
                                     ChatBubbleManager.isTalking = true;
                                     break;
 
                                 case 1:
                                 case int n when (n >= 2 && n <= 24):
-                                    dialogueEvent.EnableEvent(target.getNumber()+1, target.CharEvent);
+                                    dialogueEvent.EnableEvent(target.getNumber(), target.CharEvent);
                                     ChatBubbleManager.isTalking = true;
                                     target.EndEvent();
                                     break;
@@ -195,7 +198,7 @@ public class Mousecontrol : MonoBehaviour
                                     break;
 
                                 default:
-                                    dialogueEvent.EnableEvent(target.getNumber()+1, 1);
+                                    dialogueEvent.EnableEvent(target.getNumber(), 1);
                                     ChatBubbleManager.isTalking = true;
                                     break;
                             }

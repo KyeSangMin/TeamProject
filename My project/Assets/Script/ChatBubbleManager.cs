@@ -73,7 +73,7 @@ public class ChatBubbleManager : MonoBehaviour
                 case "유나":
                     for (; contextCount < talkDatas[dataCount].contexts.Length;)
                     {
-                        Transform target = GameObject.Find("NPC_0").transform;
+                        Transform target = GameObject.Find("NPC_8").transform;
 
                         if (playerTransform.position.x < target.position.x)
                             ChatBubble.Create(target, defaultLeftPos, talkDatas[dataCount].contexts[contextCount++]);
@@ -90,7 +90,7 @@ public class ChatBubbleManager : MonoBehaviour
                 case "다니엘":
                     for (; contextCount < talkDatas[dataCount].contexts.Length;)
                     {
-                        Transform target = GameObject.Find("NPC_1").transform;
+                        Transform target = GameObject.Find("NPC_4").transform;
 
                         if (playerTransform.position.x < target.position.x)
                             ChatBubble.Create(target, defaultLeftPos, talkDatas[dataCount].contexts[contextCount++]);
@@ -107,7 +107,7 @@ public class ChatBubbleManager : MonoBehaviour
                 case "록시":
                     for (; contextCount < talkDatas[dataCount].contexts.Length;)
                     {
-                        Transform target = GameObject.Find("NPC_2").transform;
+                        Transform target = GameObject.Find("NPC_1").transform;
 
                         if (playerTransform.position.x < target.position.x)
                             ChatBubble.Create(target, new Vector3(-2.35f, 3.0f, 1.0f), talkDatas[dataCount].contexts[contextCount++]);
@@ -124,7 +124,7 @@ public class ChatBubbleManager : MonoBehaviour
                 case "세르게이":
                     for (; contextCount < talkDatas[dataCount].contexts.Length;)
                     {
-                        Transform target = GameObject.Find("NPC_3").transform;
+                        Transform target = GameObject.Find("NPC_2").transform;
 
                         if (playerTransform.position.x < target.position.x)
                             ChatBubble.Create(target, defaultLeftPos, talkDatas[dataCount].contexts[contextCount++]);
@@ -141,7 +141,7 @@ public class ChatBubbleManager : MonoBehaviour
                 case "하르트만":
                     for (; contextCount < talkDatas[dataCount].contexts.Length;)
                     {
-                        Transform target = GameObject.Find("NPC_4").transform;
+                        Transform target = GameObject.Find("NPC_3").transform;
 
                         if (playerTransform.position.x < target.position.x)
                             ChatBubble.Create(target, defaultLeftPos, talkDatas[dataCount].contexts[contextCount++]);
@@ -158,7 +158,7 @@ public class ChatBubbleManager : MonoBehaviour
                 case "얼릭":
                     for (; contextCount < talkDatas[dataCount].contexts.Length;)
                     {
-                        Transform target = GameObject.Find("NPC_5").transform;
+                        Transform target = GameObject.Find("NPC_9").transform;
 
                         if (playerTransform.position.x < target.position.x)
                             ChatBubble.Create(target, defaultLeftPos, talkDatas[dataCount].contexts[contextCount++]);
@@ -175,7 +175,7 @@ public class ChatBubbleManager : MonoBehaviour
                 case "현식":
                     for (; contextCount < talkDatas[dataCount].contexts.Length;)
                     {
-                        Transform target = GameObject.Find("NPC_6").transform;
+                        Transform target = GameObject.Find("NPC_5").transform;
 
                         if (playerTransform.position.x < target.position.x)
                             ChatBubble.Create(target, defaultLeftPos, talkDatas[dataCount].contexts[contextCount++]);
@@ -192,7 +192,7 @@ public class ChatBubbleManager : MonoBehaviour
                 case "김":
                     for (; contextCount < talkDatas[dataCount].contexts.Length;)
                     {
-                        Transform target = GameObject.Find("NPC_7").transform;
+                        Transform target = GameObject.Find("NPC_11").transform;
 
                         if (playerTransform.position.x < target.position.x)
                             ChatBubble.Create(target, defaultLeftPos, talkDatas[dataCount].contexts[contextCount++]);
@@ -209,7 +209,7 @@ public class ChatBubbleManager : MonoBehaviour
                 case "데이비드":
                     for (; contextCount < talkDatas[dataCount].contexts.Length;)
                     {
-                        Transform target = GameObject.Find("NPC_8").transform;
+                        Transform target = GameObject.Find("NPC_10").transform;
 
                         if (playerTransform.position.x < target.position.x)
                             ChatBubble.Create(target, defaultLeftPos, talkDatas[dataCount].contexts[contextCount++]);
@@ -226,7 +226,7 @@ public class ChatBubbleManager : MonoBehaviour
                 case "타로":
                     for (; contextCount < talkDatas[dataCount].contexts.Length;)
                     {
-                        Transform target = GameObject.Find("NPC_9").transform;
+                        Transform target = GameObject.Find("NPC_7").transform;
 
                         if (playerTransform.position.x < target.position.x)
                             ChatBubble.Create(target, defaultLeftPos, talkDatas[dataCount].contexts[contextCount++]);
