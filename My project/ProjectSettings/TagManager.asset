@@ -12,6 +12,10 @@ TagManager:
   - ChatBubble
   - PuzzleExit
   - UnuseScan
+  - Retrun
+  - LockedDoor
+  - Fisrt
+  - 1stRoom
   layers:
   - Default
   - TransparentFX

@@ -381,6 +381,7 @@
 "Assets/Script/HexagonTile.cs"
 "Assets/Script/ImageSwitch.cs"
 "Assets/Script/InputSystem.cs"
+"Assets/Script/LockedDoorUIControl.cs"
 "Assets/Script/Mousecontrol.cs"
 "Assets/Script/MusicianMovement.cs"
 "Assets/Script/NoiseEffect.cs"

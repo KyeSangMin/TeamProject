@@ -149,6 +149,11 @@ public class Mousecontrol : MonoBehaviour
                             sound.GetComponent<SoundManager>().PlayEffect(2);
                             GameObject.Find("SceneManage").GetComponent<SceneManage>().BeforeSceneLoad(SceneManage.SceneNum);
                         }
+                        if (hit.collider.CompareTag("Retrun"))
+                        {
+                            sound.GetComponent<SoundManager>().PlayEffect(2);
+                            GameObject.Find("SceneManage").GetComponent<SceneManage>().TeleportRetrun();
+                        }
                         if (hit.collider.CompareTag("Item"))
                         {
                             sound.GetComponent<SoundManager>().PlayEffect(1);
@@ -206,10 +211,22 @@ public class Mousecontrol : MonoBehaviour
 
                         if (hit.collider.CompareTag("PuzzleExit"))
                         {
+                            sound.GetComponent<SoundManager>().PlayEffect(1);
                             GameObject.Find("SceneManage").GetComponent<DataManager>().DestroyPuzzle();
 
                         }
+                        if (hit.collider.CompareTag("LockedDoor"))
+                        {
+                            sound.GetComponent<SoundManager>().PlayEffect(1);
+                            hit.collider.gameObject.GetComponent<LockedDoorUIControl>().EnableLockedWindow();
+                        }
+                        if (hit.collider.CompareTag("Fisrt"))
+                        {
+                            Debug.Log("aa");
+                            sound.GetComponent<SoundManager>().PlayEffect(2);
+                            GameObject.Find("SceneManage").GetComponent<SceneManage>().TeleportRoom1();
 
+                        }
                     }
                 }
                 

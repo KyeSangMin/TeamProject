@@ -208,6 +208,82 @@ public class SceneManage : MonoBehaviour
        
     }
 
+    public void TeleportRoom1()
+    {
+        if(GameObject.Find("Player").GetComponent<PlayerMovement>().State == 0)
+        {
+            StartCoroutine(Fade(0.0f));
+            GameObject.Find("PlayerSprite").transform.position = new Vector3(6.45f, -1.0f);
+            scenesToLoad.Add(SceneManager.LoadSceneAsync("PubicRoom1", LoadSceneMode.Additive));
+            scenesToLoad.Remove(SceneManager.UnloadSceneAsync("Level" + SceneNum));
+            HideMoveButton();
+        }
+        else if(GameObject.Find("Player").GetComponent<PlayerMovement>().State == 1)
+        {
+            StartCoroutine(Fade(0.0f));
+            GameObject.Find("PlayerSprite").transform.position = new Vector3(6.45f, -1.0f);
+            scenesToLoad.Add(SceneManager.LoadSceneAsync("PubicRoom2", LoadSceneMode.Additive));
+            scenesToLoad.Remove(SceneManager.UnloadSceneAsync("Level" + SceneNum));
+            HideMoveButton();
+        }
+        else if(GameObject.Find("Player").GetComponent<PlayerMovement>().State == 2)
+        {
+            StartCoroutine(Fade(0.0f));
+            GameObject.Find("PlayerSprite").transform.position = new Vector3(6.45f, -1.0f);
+            scenesToLoad.Add(SceneManager.LoadSceneAsync("PubicRoom3", LoadSceneMode.Additive));
+            scenesToLoad.Remove(SceneManager.UnloadSceneAsync("Level" + SceneNum));
+            HideMoveButton();
+        }
+       
+    }
+    public void TeleportRoom2()
+    {
+        StartCoroutine(Fade(0.0f));
+        GameObject.Find("PlayerSprite").transform.position = new Vector3(6.45f, -1.0f);
+        scenesToLoad.Add(SceneManager.LoadSceneAsync("PubicRoom2", LoadSceneMode.Additive));
+        scenesToLoad.Remove(SceneManager.UnloadSceneAsync("Level" + SceneNum));
+        HideMoveButton();
+    }
+    public void TeleportRoom3()
+    {
+        StartCoroutine(Fade(0.0f));
+        GameObject.Find("PlayerSprite").transform.position = new Vector3(6.45f, -1.0f);
+        scenesToLoad.Add(SceneManager.LoadSceneAsync("PubicRoom3", LoadSceneMode.Additive));
+        scenesToLoad.Remove(SceneManager.UnloadSceneAsync("Level" + SceneNum));
+        HideMoveButton();
+    }
+    public void TeleportRetrun()
+    {
+        
+        StartCoroutine(Fade(0.0f));
+        if(GameObject.Find("Player").GetComponent<PlayerMovement>().State == 0)
+        {
+            GameObject.Find("Player").transform.position = GameObject.Find("LeftCameraPoint").transform.position;
+            GameObject.Find("PlayerSprite").transform.position = new Vector3(6.45f, -2.0f);
+            GameObject.Find("Player").GetComponent<PlayerMovement>().State = 0;
+            scenesToLoad.Add(SceneManager.LoadSceneAsync("Level" + SceneNum, LoadSceneMode.Additive));
+            scenesToLoad.Remove(SceneManager.UnloadSceneAsync("PubicRoom1"));
+        }
+        else if (GameObject.Find("Player").GetComponent<PlayerMovement>().State == 1)
+        {
+            GameObject.Find("Player").transform.position = GameObject.Find("RightCameraPoint").transform.position;
+            GameObject.Find("PlayerSprite").transform.position = new Vector3(6.45f, -2.0f);
+            GameObject.Find("Player").GetComponent<PlayerMovement>().State = 0;
+            scenesToLoad.Add(SceneManager.LoadSceneAsync("Level" + SceneNum, LoadSceneMode.Additive));
+            scenesToLoad.Remove(SceneManager.UnloadSceneAsync("PubicRoom2"));
+        }
+        else if(GameObject.Find("Player").GetComponent<PlayerMovement>().State == 2)
+        {
+            GameObject.Find("Player").transform.position = GameObject.Find("Level3RightPoint").transform.position;
+            GameObject.Find("PlayerSprite").transform.position = new Vector3(6.45f, -2.0f);
+            GameObject.Find("Player").GetComponent<PlayerMovement>().State = 0;
+            scenesToLoad.Add(SceneManager.LoadSceneAsync("Level" + SceneNum, LoadSceneMode.Additive));
+            scenesToLoad.Remove(SceneManager.UnloadSceneAsync("PubicRoom3"));
+        }
+        //GameObject.Find("Player").transform.position = GameObject.Find("LeftCameraPoint").transform.position;
+       
+    }
+
     public void LoadConfig()
     {
         StartCoroutine(Fade(0.0f));
