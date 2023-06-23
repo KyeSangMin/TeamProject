@@ -50,4 +50,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PubicRoom3.unity
     guid: dd9766dbb6423ab41b4b87c00598f4c5
+  - enabled: 1
+    path: Assets/Scenes/PubicRoom4.unity
+    guid: 75edc6e9cc2361e458a73bf7785b8d07
+  - enabled: 1
+    path: Assets/Scenes/PubicRoom5.unity
+    guid: b301fecf05e80af4682c0e3ae06fd8cd
+  - enabled: 1
+    path: Assets/Scenes/PubicRoom6.unity
+    guid: 31641d2137f9e714192d5fee7f4d9983
   m_configObjects: {}

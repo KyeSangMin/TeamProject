@@ -393,7 +393,7 @@ public class SceneManage : MonoBehaviour
     {
 
 
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(18.5f);
         StartCoroutine(Fade(0.0f));
         MainUI.SetActive(true);
         scenesToLoad.Add(SceneManager.LoadSceneAsync("Level0", LoadSceneMode.Additive));
