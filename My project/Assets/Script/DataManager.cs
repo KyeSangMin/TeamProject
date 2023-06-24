@@ -117,7 +117,7 @@ public class DataManager : MonoBehaviour
         if (EndEvent == 20)
         {
 
-            dialogueEvent.EnableEvent(0, 0);
+            dialogueEvent.EnableEvent(0, 2);
             ChatBubbleManager.isTalking = true;
             EndEvent++;
             Debug.Log("End");
@@ -125,7 +125,7 @@ public class DataManager : MonoBehaviour
         else if (EndEvent == 21)
         { 
 
-            dialogueEvent.EnableEvent(0, 0);
+            dialogueEvent.EnableEvent(0, 3);
             ChatBubbleManager.isTalking = true;
             EndEvent++;
             Debug.Log("Endaaa");
@@ -135,7 +135,15 @@ public class DataManager : MonoBehaviour
     public void AddCharInfo(int CharNum)
     {
 
-        CharArray[CharNum] = true;
+        if(CharNum < 6)
+        {
+            CharArray[CharNum] = true;
+        }
+        else
+        {
+            int i = CharNum + 1;
+            CharArray[i] = true;
+        }
 
 
     }
@@ -303,7 +311,7 @@ public class DataManager : MonoBehaviour
                 {
                     GameObject.Find("ItemImage_big").GetComponent<ImageSwitch>().sprite = GameObject.Find("ItemImage_2").GetComponent<ImageSwitch>().sprite;
                     GameObject.Find("ItemImage_big").GetComponent<ImageSwitch>().SwitchItemImage();
-                    GameObject.Find("ItemImage_1").GetComponent<ImageSwitch>().SwitchItemImage();
+                    GameObject.Find("ItemImage_2").GetComponent<ImageSwitch>().SwitchItemImage();
                     GameObject.Find("ItemTextTitle").GetComponent<TextMeshProUGUI>().text = GameObject.Find("ItemImage_2").GetComponent<ImageSwitch>().TitleText.ToString();
                     GameObject.Find("ItemTextMain").GetComponent<TextMeshProUGUI>().text = GameObject.Find("ItemImage_2").GetComponent<ImageSwitch>().MainText.ToString();
                 }
@@ -413,7 +421,7 @@ public class DataManager : MonoBehaviour
                 {
                     GameObject.Find("ItemImage_big").GetComponent<ImageSwitch>().sprite = GameObject.Find("ItemImage_8").GetComponent<ImageSwitch>().sprite;
                     GameObject.Find("ItemImage_big").GetComponent<ImageSwitch>().SwitchItemImage();
-                    GameObject.Find("ItemImage_1").GetComponent<ImageSwitch>().SwitchItemImage();
+                    GameObject.Find("ItemImage_8").GetComponent<ImageSwitch>().SwitchItemImage();
                     GameObject.Find("ItemTextTitle").GetComponent<TextMeshProUGUI>().text = GameObject.Find("ItemImage_8").GetComponent<ImageSwitch>().TitleText.ToString();
                     GameObject.Find("ItemTextMain").GetComponent<TextMeshProUGUI>().text = GameObject.Find("ItemImage_8").GetComponent<ImageSwitch>().MainText.ToString();
                 }

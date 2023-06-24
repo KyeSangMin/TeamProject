@@ -8,9 +8,12 @@ public class UI_ButtonEvent : MonoBehaviour
     GameObject Puzzle_UI;
     GameObject PAD_UI;
     GameObject CharInfo;
+    GameObject EndChar;
     GameObject ItemInfo;
     GameObject MapInfo;
     GameObject CharInfo_Inside;
+
+    public GameObject UISettings;
     GameObject sound;
     public bool UiSetUp;
     //GameObject Dialogue_UI;
@@ -24,16 +27,21 @@ public class UI_ButtonEvent : MonoBehaviour
        // Dialogue_UI = GameObject.Find("UI_Dialogue");
        // Puzzle_UI.SetActive(false);
         PAD_UI.SetActive(false);
+   
         //Dialogue_UI.SetActive(false);
 
         CharInfo = GameObject.Find("UI_CharInfo");
+        EndChar = GameObject.Find("UI_EndChar");
         ItemInfo = GameObject.Find("UI_ItemInfo");
         MapInfo = GameObject.Find("UI_Map");
         CharInfo_Inside = GameObject.Find("UI_CharInfoInside");
+        UISettings = GameObject.Find("UI_Setting");
         CharInfo.SetActive(false);
+        EndChar.SetActive(false);
         ItemInfo.SetActive(false);
         MapInfo.SetActive(false);
         CharInfo_Inside.SetActive(false);
+        UISettings.SetActive(false);
         UiSetUp = false;
 
     }
@@ -67,25 +75,34 @@ public class UI_ButtonEvent : MonoBehaviour
     {
         sound.GetComponent<SoundManager>().PlayEffect(1);
         GameObject.Find("SceneManage").GetComponent<DataManager>().DestroyPuzzle();
-        if (PAD_UI.activeSelf == true)
+
+        if (GameObject.Find("SceneManage").GetComponent<DataManager>().EndEvent == 21)
         {
-            PAD_UI.SetActive(false);
-            CharInfo.SetActive(false);
-            ItemInfo.SetActive(false);
-            MapInfo.SetActive(false);
-            CharInfo_Inside.SetActive(false);
-            UiSetUp = false;
+            EndChar.SetActive(true);
         }
         else
         {
-            PAD_UI.SetActive(true);
-            CharInfo.SetActive(false);
-            ItemInfo.SetActive(false);
-            MapInfo.SetActive(false);
-            CharInfo_Inside.SetActive(false);
-            UiSetUp = true;
+            if (PAD_UI.activeSelf == true)
+            {
+                PAD_UI.SetActive(false);
+                CharInfo.SetActive(false);
+                ItemInfo.SetActive(false);
+                MapInfo.SetActive(false);
+                CharInfo_Inside.SetActive(false);
+                UiSetUp = false;
+            }
+            else
+            {
+                PAD_UI.SetActive(true);
+                CharInfo.SetActive(false);
+                ItemInfo.SetActive(false);
+                MapInfo.SetActive(false);
+                CharInfo_Inside.SetActive(false);
+                UiSetUp = true;
 
+            }
         }
+       
     }
 
 
@@ -140,6 +157,19 @@ public class UI_ButtonEvent : MonoBehaviour
         }
     }
     
+
+    public void SetPadsetting()
+    {
+        if(UISettings.activeSelf == true)
+        {
+            UISettings.SetActive(false);
+        }
+        else
+        {
+            UISettings.SetActive(true);
+        }
+       
+    }
     public void ResetPadButton()
     {
         sound.GetComponent<SoundManager>().PlayEffect(1);
@@ -431,11 +461,33 @@ public class UI_ButtonEvent : MonoBehaviour
     {
         sound.GetComponent<SoundManager>().PlayEffect(1);
         GameObject.Find("SceneManage").GetComponent<Mousecontrol>().GetItem = true;
-        int i =GameObject.Find("SceneManage").GetComponent<DataManager>().ItemList;
+        int i = GameObject.Find("SceneManage").GetComponent<DataManager>().ItemList;
         GameObject.Find("Button").GetComponent<ImageSwitch>().sprite = GameObject.Find("ItemImage_"+i).GetComponent<ImageSwitch>().sprite;
         GameObject.Find("Button").GetComponent<ImageSwitch>().SwitchItemImage();
         Debug.Log("GetItem");
 
+    }
+    public void EndingTrue()
+    {
+        sound.GetComponent<SoundManager>().PlayEffect(1);
+        GameObject.Find("SceneManage").GetComponent<SceneManage>().FadeEffect();
+        GameObject.Find("SceneManage").GetComponent<SceneManage>().TeleportEnd(0);
+
+
+    }
+
+
+    public void EndingFalse()
+    {
+        sound.GetComponent<SoundManager>().PlayEffect(1);
+        GameObject.Find("SceneManage").GetComponent<SceneManage>().FadeEffect();
+        GameObject.Find("SceneManage").GetComponent<SceneManage>().TeleportEnd(1);
+
+    }
+   
+    public void CheatEvent()
+    {
+        GameObject.Find("SceneManage").GetComponent<DataManager>().EndEvent = 20;
     }
 
     /*

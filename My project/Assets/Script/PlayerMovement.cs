@@ -45,8 +45,8 @@ public class PlayerMovement : MonoBehaviour
             if (Vector3.Distance(TargetPos, Cam.transform.position) < 0.1f)
             {
                 ButtonState = false;
-                animator.SetBool("WalkFront", false);
-                animator.SetBool("WalkBack", false);
+                
+                animator.SetBool("iswalk", false);
                 GameObject.Find("Main Camera").GetComponent<FollowCam>().ShackCheck = true;
                 if (this.State == 1)
                 {
@@ -68,8 +68,8 @@ public class PlayerMovement : MonoBehaviour
             if (Vector3.Distance(TargetPos, Cam.transform.position) < 0.1f)
             {
                 ButtonState = false;
-                animator.SetBool("WalkFront", false);
-                animator.SetBool("WalkBack", false);
+               
+                animator.SetBool("iswalk", false);
 
                 if (this.State == 0)
                 {
@@ -129,13 +129,16 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnEventLeftButton()  // ¿À¸¥ÂÊ
     {
-        GameObject.Find("Main Camera").GetComponent<FollowCam>().ShackCheck = false; 
+        GameObject.Find("Main Camera").GetComponent<FollowCam>().ShackCheck = false;
 
-        if(GameObject.Find("SceneManage").GetComponent<SceneManage>().getSceneNum() !=3)
+
+        animator.SetBool("WalkBack", false);
+        if (GameObject.Find("SceneManage").GetComponent<SceneManage>().getSceneNum() !=3)
         {
             if (State == 0)
             {
                 animator.SetBool("WalkFront", true);
+                animator.SetBool("iswalk", true);
                 ButtonState = true;
                 
             }
@@ -147,6 +150,7 @@ public class PlayerMovement : MonoBehaviour
             if (State == 0)
             {
                 animator.SetBool("WalkFront", true);
+                animator.SetBool("iswalk", true);
                 ButtonState = true;
                 pressright = true;
                
@@ -154,6 +158,7 @@ public class PlayerMovement : MonoBehaviour
             else if (State == 1)
             {
                 animator.SetBool("WalkFront", true);
+                animator.SetBool("iswalk", true);
                 ButtonState = true;
                 pressright = true;
                
@@ -169,12 +174,14 @@ public class PlayerMovement : MonoBehaviour
     public void OnEventRightButton()
     {
         GameObject.Find("Main Camera").GetComponent<FollowCam>().ShackCheck = false;
+        animator.SetBool("WalkFront", false);
         if (GameObject.Find("SceneManage").GetComponent<SceneManage>().getSceneNum() != 3)
         {
             if (State == 1)
             {
                 ButtonState = true;
                 animator.SetBool("WalkBack", true);
+                animator.SetBool("iswalk", true);
             }
         }
 
@@ -185,12 +192,14 @@ public class PlayerMovement : MonoBehaviour
                 ButtonState = true;
                 pressleft = true;
                 animator.SetBool("WalkBack", true);
+                animator.SetBool("iswalk", true);
             }
             else if (State == 2)
             {
                 ButtonState = true;
                 pressleft = true;
                 animator.SetBool("WalkBack", true);
+                animator.SetBool("iswalk", true);
             }
 
         }

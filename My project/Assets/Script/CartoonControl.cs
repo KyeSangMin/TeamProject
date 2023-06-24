@@ -14,6 +14,7 @@ public class CartoonControl : MonoBehaviour
     void Start()
     {
         Cut1.GetComponent<FadeCartoonUnAni>().FadedImage();
+        GameObject.Find("SceneManage").GetComponent<DataManager>().EndEvent = 0;
     }
 
     // Update is called once per frame

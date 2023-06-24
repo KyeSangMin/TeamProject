@@ -16,6 +16,11 @@ TagManager:
   - LockedDoor
   - Fisrt
   - 1stRoom
+  - Second
+  - Third
+  - Return2
+  - Return3
+  - agent
   layers:
   - Default
   - TransparentFX

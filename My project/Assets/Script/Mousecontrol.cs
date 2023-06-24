@@ -157,6 +157,18 @@ public class Mousecontrol : MonoBehaviour
                             sound.GetComponent<SoundManager>().PlayEffect(2);
                             GameObject.Find("SceneManage").GetComponent<SceneManage>().TeleportRetrun();
                         }
+
+                        if (hit.collider.CompareTag("Return2"))
+                        {
+                            sound.GetComponent<SoundManager>().PlayEffect(2);
+                            GameObject.Find("SceneManage").GetComponent<SceneManage>().TeleportRetrun2();
+                        }
+
+                        if (hit.collider.CompareTag("Return3"))
+                        {
+                            sound.GetComponent<SoundManager>().PlayEffect(2);
+                            GameObject.Find("SceneManage").GetComponent<SceneManage>().TeleportRetrun3();
+                        }
                         if (hit.collider.CompareTag("Item"))
                         {
                             sound.GetComponent<SoundManager>().PlayEffect(1);
@@ -206,6 +218,14 @@ public class Mousecontrol : MonoBehaviour
 
 
                         }
+
+                        if (hit.collider.CompareTag("agent"))
+                        {
+                            Debug.Log("agent");
+                            dialogueEvent.EnableEvent(0, 1);
+                            ChatBubbleManager.isTalking = true;
+                        }
+
                         if (hit.collider.CompareTag("ChatBubble"))
                         {
                             ChatBubbleManager.isChat = false;
@@ -225,9 +245,22 @@ public class Mousecontrol : MonoBehaviour
                         }
                         if (hit.collider.CompareTag("Fisrt"))
                         {
-                            Debug.Log("aa");
                             sound.GetComponent<SoundManager>().PlayEffect(2);
                             GameObject.Find("SceneManage").GetComponent<SceneManage>().TeleportRoom1();
+
+                        }
+
+                        if (hit.collider.CompareTag("Second"))
+                        {
+                            sound.GetComponent<SoundManager>().PlayEffect(2);
+                            GameObject.Find("SceneManage").GetComponent<SceneManage>().TeleportRoom2();
+
+                        }
+
+                        if (hit.collider.CompareTag("Third"))
+                        {
+                            sound.GetComponent<SoundManager>().PlayEffect(2);
+                            GameObject.Find("SceneManage").GetComponent<SceneManage>().TeleportRoom3();
 
                         }
                     }
