@@ -2112,8 +2112,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 026c2c418edf7e348802a989080ca793, type: 3}
   silhouette: {fileID: 21300000, guid: 026c2c418edf7e348802a989080ca793, type: 3}
-  silhouetteStandSprite: {fileID: 21300000, guid: 126586493c38b034aab94927d002620f, type: 3}
-  StandSprite: {fileID: 21300000, guid: 6d36770df2b4bd54fa4616c6bf3241e5, type: 3}
+  silhouetteStandSprite: {fileID: 21300000, guid: d8563d368b9732f40a29e3bd92f66179, type: 3}
+  StandSprite: {fileID: 21300000, guid: d8563d368b9732f40a29e3bd92f66179, type: 3}
   TitleText: "\uD558 \uB85D"
   MainText: "\uAE30\uCC28\uC758 \uCC28\uC7A5."
 --- !u!1 &113326904
@@ -3815,7 +3815,7 @@ GameObject:
   - component: {fileID: 250489081}
   - component: {fileID: 250489080}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ItemInfoButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4464,7 +4464,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.29995003, y: 67}
+  m_AnchoredPosition: {x: -0.90011, y: 72.997}
   m_SizeDelta: {x: 33.244, y: 243.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &317252447
@@ -11449,10 +11449,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94b730597b6f1da46a2027039b686951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 9decea43a135a2c4cb61deb7554b9942, type: 3}
-  silhouette: {fileID: 21300000, guid: 9decea43a135a2c4cb61deb7554b9942, type: 3}
-  silhouetteStandSprite: {fileID: 21300000, guid: 7d0ea20b11f15ef4b92a9876110df837, type: 3}
-  StandSprite: {fileID: 21300000, guid: 7d0ea20b11f15ef4b92a9876110df837, type: 3}
+  sprite: {fileID: 21300000, guid: 464e1d0b731fdcb499edc9bb09995a75, type: 3}
+  silhouette: {fileID: 21300000, guid: 464e1d0b731fdcb499edc9bb09995a75, type: 3}
+  silhouetteStandSprite: {fileID: 21300000, guid: 80e30d7a865a6dc4b909725733403585, type: 3}
+  StandSprite: {fileID: 21300000, guid: 80e30d7a865a6dc4b909725733403585, type: 3}
   TitleText: ???
   MainText: "\uAE30\uC5C5\uCABD\uC758 \uAE34\uAE09 \uB300\uC751\uD300\uC774\uB2E4."
 --- !u!1 &825202229
@@ -20138,7 +20138,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35.3, y: 36}
+  m_AnchoredPosition: {x: -35.3, y: -38}
   m_SizeDelta: {x: 38.76429, y: 460}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1499766457
@@ -23844,7 +23844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6055049890816601442, guid: 3dbc057b6a7aded43aea22e458bc3051, type: 3}
       propertyPath: m_SortingOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6055049890816601443, guid: 3dbc057b6a7aded43aea22e458bc3051, type: 3}
       propertyPath: m_LocalScale.x

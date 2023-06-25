@@ -51,6 +51,8 @@ public class DataManager : MonoBehaviour
     public int EndEvent;
     public List<int> CheckedList;
 
+    public static bool[] isFirst = 
+        new bool[10] {true, true, true, true, true, true, true, true, true, true};
 
     // Start is called before the first frame update
     void Start()
@@ -127,7 +129,6 @@ public class DataManager : MonoBehaviour
 
             dialogueEvent.EnableEvent(0, 3);
             ChatBubbleManager.isTalking = true;
-            EndEvent++;
             Debug.Log("Endaaa");
         }
      }
@@ -656,10 +657,242 @@ public class DataManager : MonoBehaviour
         }
     }
 
+    public void LoadItemSprtite()
+    {
+        if (Item1)
+        {
+            GameObject.Find("ItemImage_1").GetComponent<ImageSwitch>().SwitchItemImage();
+        }
+        if (Item2)
+        {
+            GameObject.Find("ItemImage_2").GetComponent<ImageSwitch>().SwitchItemImage();
+        }
+        if (Item3)
+        {
+            GameObject.Find("ItemImage_3").GetComponent<ImageSwitch>().SwitchItemImage();
+        }
+        if (Item4)
+        {
+            GameObject.Find("ItemImage_4").GetComponent<ImageSwitch>().SwitchItemImage();
+        }
+        if (Item5)
+        {
+            GameObject.Find("ItemImage_5").GetComponent<ImageSwitch>().SwitchItemImage();
+        }
+        if (Item6)
+        {
+            GameObject.Find("ItemImage_6").GetComponent<ImageSwitch>().SwitchItemImage();
+        }
+        if (Item7)
+        {
+            GameObject.Find("ItemImage_7").GetComponent<ImageSwitch>().SwitchItemImage();
+        }
+        if (Item8)
+        {
+            GameObject.Find("ItemImage_8").GetComponent<ImageSwitch>().SwitchItemImage();
+        }
+        if (Item9)
+        {
+            GameObject.Find("ItemImage_9").GetComponent<ImageSwitch>().SwitchItemImage();
+        }
+        if (Item10)
+        {
+            GameObject.Find("ItemImage_10").GetComponent<ImageSwitch>().SwitchItemImage();
+        }
+        if (Item11)
+        {
+            GameObject.Find("ItemImage_11").GetComponent<ImageSwitch>().SwitchItemImage();
+        }
+        if (Item12)
+        {
+            GameObject.Find("ItemImage_12").GetComponent<ImageSwitch>().SwitchItemImage();
+        }
+        if (Item13)
+        {
+            GameObject.Find("ItemImage_13").GetComponent<ImageSwitch>().SwitchItemImage();
+        }
+        if (Item14)
+        {
+            GameObject.Find("ItemImage_14").GetComponent<ImageSwitch>().SwitchItemImage();
+        }
+        if (Item15)
+        {
+            GameObject.Find("ItemImage_15").GetComponent<ImageSwitch>().SwitchItemImage();
+        }
+        if (Item16)
+        {
+            GameObject.Find("ItemImage_16").GetComponent<ImageSwitch>().SwitchItemImage();
+        }
+        if (Item17)
+        {
+            GameObject.Find("ItemImage_17").GetComponent<ImageSwitch>().SwitchItemImage();
+        }
+        if (Item18)
+        {
+            GameObject.Find("ItemImage_18").GetComponent<ImageSwitch>().SwitchItemImage();
+        }
+        if (Item19)
+        {
+            GameObject.Find("ItemImage_19").GetComponent<ImageSwitch>().SwitchItemImage();
+        }
+        if (Item20)
+        {
+            GameObject.Find("ItemImage_20").GetComponent<ImageSwitch>().SwitchItemImage();
+        }
+
+    }
+
 
     public bool CheckItem(int ItemNum)
     {
-        
+        switch (ItemNum)
+        {
+            case 1:
+                if (Item1)
+                {
+                    return true;
+                }
+               
+                break;
+
+            case 2:
+                if (Item2)
+                {
+                    return true;
+                }
+               
+                break;
+
+            case 3:
+                if (Item3)
+                {
+                    return true;
+                }
+              
+                break;
+
+            case 4:
+                if (Item4)
+                {
+                    return true;
+                }
+              
+                break;
+            case 5:
+                if (Item5)
+                {
+                    return true;
+                }
+               
+                break;
+            case 6:
+                if (Item6)
+                {
+                    return true;
+                }
+              
+                break;
+            case 7:
+                if (Item7)
+                {
+                    return true;
+                }
+               
+                break;
+            case 8:
+                if (Item8)
+                {
+                    return true;
+                }
+                
+                break;
+            case 9:
+                if (Item9)
+                {
+                    return true;
+                }
+                break;
+            case 10:
+                if (Item10)
+                {
+                    return true;
+                }
+                
+                break;
+            case 11:
+                if (Item11)
+                {
+                    return true;
+                }
+                
+                break;
+            case 12:
+                if (Item12)
+                {
+                    return true;
+                }
+               
+                break;
+            case 13:
+                if (Item13)
+                {
+                    return true;
+                }
+               
+                break;
+            case 14:
+                if (Item14)
+                {
+                    return true;
+                }
+                
+                break;
+            case 15:
+                if (Item15)
+                {
+                    return true;
+                }
+                
+                break;
+            case 16:
+                if (Item16)
+                {
+                    return true;
+                }
+               
+                break;
+            case 17:
+                if (Item17)
+                {
+                    return true;
+                }
+              
+                break;
+            case 18:
+                if (Item18)
+                {
+                    return true;
+                }
+                
+                break;
+            case 19:
+                if (Item19)
+                {
+                    return true;
+                }
+                
+                break;
+            case 20:
+                if (Item20)
+                {
+                    return true;
+                }
+              
+                break;
+
+            default:
+                break;
+        }
 
         return false;
     }

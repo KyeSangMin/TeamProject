@@ -9,8 +9,6 @@ public class CharData : MonoBehaviour
 
     public int CharNumber;
     public int CharEvent;
-    private bool isFirst;
-
 
     public List<int> CorrectList;
     
@@ -21,8 +19,10 @@ public class CharData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CharEvent = 0;
-        isFirst = true;
+        if (DataManager.isFirst[CharNumber - 1])
+            CharEvent = 0;
+        else
+            CharEvent = 1;
     }
 
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class CharData : MonoBehaviour
 
     public int FirstContect()
     {
-        isFirst = false;
+        DataManager.isFirst[CharNumber - 1] = false;
         return CharEvent++;
     }
 
@@ -50,7 +50,7 @@ public class CharData : MonoBehaviour
 
     public void EndEvent()
     {
-        if (isFirst)
+        if (DataManager.isFirst[CharNumber - 1])
             CharEvent = 0;
         else
             CharEvent = 1;

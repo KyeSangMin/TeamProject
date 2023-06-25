@@ -33,8 +33,8 @@ public class MusicianMovement : MonoBehaviour
         animator = gameObject.GetComponentInChildren<Animator>();
         TargetPos = Poses[4].transform.position;
         CheckMove = true;
-        animator.SetBool("leftSide", false);
-        animator.SetBool("RightSide", true);
+        animator.SetBool("leftSide", true);
+        animator.SetBool("RightSide", false);
         animator.SetBool("isWalk", false);
     }
 

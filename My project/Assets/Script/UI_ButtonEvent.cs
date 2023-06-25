@@ -139,6 +139,7 @@ public class UI_ButtonEvent : MonoBehaviour
             PAD_UI.SetActive(false);
             GameObject.Find("SceneManage").GetComponent<DataManager>().ItemList = 1;
             GameObject.Find("SceneManage").GetComponent<DataManager>().LoadItemInfo();
+            GameObject.Find("SceneManage").GetComponent<DataManager>().LoadItemSprtite();
         }
     }
 
@@ -460,11 +461,15 @@ public class UI_ButtonEvent : MonoBehaviour
     public void GetItemInfo()
     {
         sound.GetComponent<SoundManager>().PlayEffect(1);
-        GameObject.Find("SceneManage").GetComponent<Mousecontrol>().GetItem = true;
         int i = GameObject.Find("SceneManage").GetComponent<DataManager>().ItemList;
-        GameObject.Find("Button").GetComponent<ImageSwitch>().sprite = GameObject.Find("ItemImage_"+i).GetComponent<ImageSwitch>().sprite;
-        GameObject.Find("Button").GetComponent<ImageSwitch>().SwitchItemImage();
-        Debug.Log("GetItem");
+        if (GameObject.Find("SceneManage").GetComponent<DataManager>().CheckItem(i))
+        {
+            GameObject.Find("SceneManage").GetComponent<Mousecontrol>().GetItem = true;
+            GameObject.Find("Button").GetComponent<ImageSwitch>().sprite = GameObject.Find("ItemImage_" + i).GetComponent<ImageSwitch>().sprite;
+            GameObject.Find("Button").GetComponent<ImageSwitch>().SwitchItemImage();
+            Debug.Log("GetItem");
+
+        }
 
     }
     public void EndingTrue()

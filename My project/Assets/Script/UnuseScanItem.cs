@@ -19,7 +19,10 @@ public class UnuseScanItem : MonoBehaviour
 
     public void ActiveItemInfo()
     {
+        Transform player = GameObject.Find("Player").GetComponent<Transform>();
+
         isOnUI = true;
+        gameObject.transform.localPosition = new Vector3(player.position.x + 1.5f, -1.0f, 1.0f);
         StartCoroutine(UnusedUIActivation());
     }
 

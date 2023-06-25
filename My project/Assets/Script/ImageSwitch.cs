@@ -29,7 +29,7 @@ public class ImageSwitch : MonoBehaviour
     public void SwichImage()
     {
         gameObject.GetComponent<Image>().sprite = sprite;
-        gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(18.32664f,120);
+        gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(14.0f,120.0f);
     }
 
     public void SwitchItemImage()
